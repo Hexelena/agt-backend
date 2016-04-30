@@ -1,0 +1,16 @@
+{
+  "name": "agt-backend",
+  "version": "1.0.0",
+  "description": "REST-API to look up ancient greek words in a database or other API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run" : "node index.js"
+  },
+  //"repository": {
+  //  "type": "git",
+  //  "url": "help"
+  //},
+  "author": "Hexelena",
+  "license": "MIT"
+}
