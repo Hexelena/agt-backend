@@ -145,7 +145,7 @@ function isAfter(string, reference) {
 	var ref = normalizeGreek(reference);
 
 	if (search === ref) {
-		console.log("the strings are equal");
+		//console.log("the strings are equal");
 		return true;
 	}
 
@@ -153,10 +153,10 @@ function isAfter(string, reference) {
 	while(true) {
 		//console.log("Entering Iteration No." + i + " of isAfter: (" + abc.indexOf(search[i]) + " vs " + abc.indexOf(ref[i]) + ").");
 		if (abc.indexOf(search[i]) > abc.indexOf(ref[i])) {
-			console.log("'" + search + "' comes after '" + ref + "' | -> true");
+			//console.log("'" + search + "' comes after '" + ref + "' | -> true");
 			return true;
 		} else if (abc.indexOf(search[i]) < abc.indexOf(ref[i])) {
-			console.log("'" + search + "' comes before '" + ref + "' | -> false");
+			//console.log("'" + search + "' comes before '" + ref + "' | -> false");
 			return false;
 		} else { // equal
 			i++;
@@ -165,7 +165,7 @@ function isAfter(string, reference) {
 }
 
 module.exports = {
-	abc		: abc,
+	abc				: abc,
 	isAfter 		: isAfter,
 	normalizeGreek	: normalizeGreek
 };
