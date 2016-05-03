@@ -74,19 +74,14 @@ function generatePageDict() {
 function findPageLink(query) {
     var index = 0;
 
-    //console.log(greek.isAfter(query, pageDict[index].begin));
-    while(true) {
-        console.log(" " + index + " vs " + pageDict.length);
-        // the order of the expression evaluation is essential at this point.
-        // if the query is on the last page of the dictionary, the previous isAfter call returns true
-        // but if it is evaluated once more it will throw an error. Therefore the length condition must fail first!
-        if (index < pageDict.length && greek.isAfter(query, pageDict[index].begin)) {
-            index++;
-        } else {
-            index--;
-            break;
-        }
+    // iterate to find the page in which to search the query string
+    // proceed by increasing until it is one step too far. Then go back once and return the value.
+    while(index < pageDict.length && greek.isAfter(query, pageDict[index].begin)) {
+        index++;
     }
+    
+    index--;
+
     return pageDict[index].link;
 }
 
