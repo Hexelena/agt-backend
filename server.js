@@ -10,8 +10,10 @@ var app = express();
 var PORT = 8081;
 
 var operoneurl = "http://localhost/web/phayax/agt/res/operone/altspr/wadinhalt.html";
+var operonebaseurl = "http://localhost/web/phayax/agt/res/operone/altspr/";
 
 var pageDict = [];
+var pageContent = [];
 
 // ROOT
 
@@ -34,7 +36,14 @@ app.get("/dict", function (req, res) {
 // DICTIONARY QUERY
 app.get("/dict/:query", function (req, res) {
     console.log("incoming dict request for '" + req.params.query + "'. Processing as " + greek.normalizeGreek(req.params.query) + "'.");
-    res.send("received request for '" + req.params.query + "'. Searching for '" + greek.normalizeGreek(req.params.query) + "'.\nResult is possibly on page " + findPageLink(req.params.query));
+    //res.send("received request for '" + req.params.query + "'. Searching for '" + greek.normalizeGreek(req.params.query) + "'.\nResult is possibly on page " + findPageLink(req.params.query));
+    var result = {
+        "origSearch" : req.params.query,
+        "convertedSearch" : greek.normalizeGreek(req.params.query),
+        "page" : findPageLink(req.params.query),
+        "pageContent" : ""
+    }
+    res.json(result);
 });
 
 function generatePageDict() {
@@ -67,6 +76,7 @@ function generatePageDict() {
                 tempPageDict.push(newObject);
             }
             pageDict = tempPageDict;
+            
         }
     });
 }
@@ -79,10 +89,21 @@ function findPageLink(query) {
     while(index < pageDict.length && greek.isAfter(query, pageDict[index].begin)) {
         index++;
     }
-    
+
     index--;
 
     return pageDict[index].link;
+}
+
+function getPageContent(pageLink) {
+    request(pageLink, function(error, response, html) {
+        if (!error) {
+            var $ = cheerio.load(html);
+
+            var relevantData = $("ul li");
+
+        }
+    });
 }
 
 
