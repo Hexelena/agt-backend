@@ -18,9 +18,11 @@ var simplerDict = {
     "ἇ": "α",
     "ἆ": "α",
 
-    // Alpha with whateverthefuck 
+    // Alpha with whateverthe****
     // TODO: figure out what this is.
+    // Maybe it's long/short sign...
     "ᾱ": "α",
+    "ᾰ": "α",
 
     // standard accents for Epsilon
     "ὲ": "ε",
