@@ -6,6 +6,9 @@ Backend REST-API for an Ancient Greek Translator.
 The website operone.de has a section with an ancient greek dictionary.  
 [generatedb.py](generatedb.py) scrapes all the entries and writes them into a sqlite database.  
 The node server shall then access the database and provide data via a REST-API.
+Rough scheme of how this is all supposed to work:  
+<img src="concept/concept.png" width=700px>
+
 
 ## Data Model:
 Currently there are two tables in the database:
