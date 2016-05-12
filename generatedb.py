@@ -81,10 +81,15 @@ class App(tk.Tk):
 
         self.entriesParsed = 0
 
+        # backup stdout
+        self.origstdout = sys.stdout
+        # reroute stdout to application text widget
         sys.stdout = StdoutRedirector(self.output)
 
 
     def quit(self):
+        # restore original stdout
+        sys.stdout = self.origstdout
         self.destroy()
 
     def startParsing(self):
