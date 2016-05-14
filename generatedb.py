@@ -40,10 +40,10 @@ class App(tk.Tk):
 
     def __init__(self, cursor):
         tk.Tk.__init__(self)
-        self.intialize()
+        self.initialize()
         self.dbHandle = cursor
 
-    def intialize(self):
+    def initialize(self):
         self.title('Operone -> Database Parser')
         self.grid()
         self.minsize(800,600)
