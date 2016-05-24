@@ -252,7 +252,7 @@ def parsePage(c, page, idx):
 
         # ok, so here we take off the first part of the entry which
         # contains the greek word. Then we feed the remaining string into 
-        # a new Beautifulsoup instance and strip remaining tags in the translation
+        # a new BeautifulSoup instance and strip remaining tags in the translation
         # with the get_text() method.
         subText = BeautifulSoup((str(element))[tlStartIndex:], 'html.parser')
         translation = str(subText.get_text()).strip()
