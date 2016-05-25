@@ -15,6 +15,8 @@ import datetime
 
 operoneUrl = 'http://localhost/web/phayax/agt/res/operone/altspr/wadinhalt.html'
 operoneBaseUrl = "http://localhost/web/phayax/agt/res/operone/altspr/"
+
+DB_NAME = 'agt.sqlite'
 #operoneUrl = 'http://www.operone.de/altspr/wadinhalt.html'
 #operoneBaseUrl = "http://www.operone.de/altspr/"
 
@@ -269,12 +271,12 @@ def parsePage(c, page, idx):
 
 
 def main():
-    if os.path.exists('agt.db'):
-        os.remove('agt.db')
+    if os.path.exists(DB_NAME):
+        os.remove(DB_NAME)
         print('[Removed old database]')
 
     # sqlite setup
-    conn = sqlite3.connect('agt.db')
+    conn = sqlite3.connect(DB_NAME)
     print('[Created new database]')
     c = conn.cursor()
 
