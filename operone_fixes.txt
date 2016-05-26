@@ -1,0 +1,151 @@
+'<span class="hel"> ἀδαγμός (δάκνω), ὁ, </span>': '<span class="hel"> ἀδαγμός, </span> (δάκνω), ὁ,',
+'ἀ(ε)ίδασμος,': 'ἀίδασμος, ἀείδασμος,',
+'ἄ-κτι(σ)τος,': 'ἄ-κτιτος, ἄ-κτιστος,',
+'(ἀπ-αμπ-ίσχω),': 'ἀπ-αμπ-ίσχω,',
+'(ἀπ-αμπλακεῖν),': 'ἀπ-αμπλακεῖν,',
+'(ἀποστάσιον),': 'ἀποστάσιον,',
+<li> <span class="hel"> ἀσθενόῤ-ῥιζος (ῥίζα), </span> mit schwacher Wurzel</li>
+<li> <span class="hel"> ἆσθμα (ἄω), </span> schweres, kurzes Atemholen, Beklemmung; Hauch</li>
+<li> <span class="hel"> ἄ-σιγμος (σίγμα), </span> ohne den Buchstaben Sigma</li>
+<li> <span class="hel"> ἄσιος (ἄσις), </span> schlammig</li>
+'<span class="hel"> ἀ-σκαρίζω (α euphon.), </span>':'<span class="hel"> ἀ-σκαρίζω, </span> (α euphon.),'
+'<span class="hel"> ἄ-σκαφος (σκάπτω), </span>': '<span class="hel"> ἄ-σκαφος, </span> (σκάπτω),'
+'<span class="hel"> ἀ-σκέπαρνον (σκέπαρνον), </span>': ' <span class="hel"> ἀ-σκέπαρνον, </span> (σκέπαρνον),'
+'<span class="hel"> ἄ-σκευος u. ἀ-σκευής (σκευή), </span>': '<span class="hel"> ἄ-σκευος, ἀ-σκευής, </span> (σκευή),'
+<li> <span class="hel"> ἄ-σκηνος (σκηνή), </span> 1) ohne Zelt. 2) ohne szenisches Blendwerk, ohne Täuschung</li>
+<li> <span class="hel"> ἄ-σκιος (σκία), </span> 1) schattenlos. 2) schattig</li>
+<li> <span class="hel"> ἀσκο-κήλης (κήλη), </span> mit einem weit vorgetretenen Bruch</li>
+<li> <span class="hel"> αὐξί-φωτος (φῶς), </span> das Licht vermehrend</li>
+<li> <span class="hel"> αὔρα (ἄω, αὔω), </span> Hauch, Luftzug; frische Morgenluft; die kühle Luft vom Wasser; Wind; günstiger Wind bei der Schifffahrt</li>
+<li> <span class="hel"> ἄ-χορδος (χορδή), </span> ohne Saiten, od. Saiteninstrumente</li>
+<li> <span class="hel"> ἀ-χρήματος (χρῆμα), </span> ohne Geld, arm</li>
+<li> <span class="hel"> ἀ-χρώματος (χρῶμα), </span> ohne Farbe</li>
+<li> <span class="hel"> ἄ-ψῡχος (ψυχή), </span> 1) leblos, νεκρός; βορά, Speise von einer leblosen Sache. 2) mutlos, feig; von Schriftstellern: geistlos</li>
+<li> <span class="hel"> δακνάζομαι (δάκνω), </span> sich betrüben</li>
+<li> <span class="hel"> δημοσίᾳ (s. δημόσιος), </span> öffentlich; gewöhnlich = nach Beschluß des Staats, auf Kosten des Staats; ἀποϑνήσκειν, d. i. durch Henkershand</li>
+<li> <span class="hel"> δια-βιόω (s. βιόω), </span> durch-, verleben; öfter absolut: sein ganzes Leben hinbringen</li>
+<li> <span class="hel"> δια-βλαστάνω (s. βλαστάνω), </span> ausschlagen, auskeimen</li>
+<li> <span class="hel"> δια-βοάω (s. βοάω), </span> durch-, ausschreien; κατ' ἀλλήλους, laut durch einander schreien; bekannt machen; berühmt machen; διαβοᾶσϑαι = um die Wette schreien</li>
+<li> <span class="hel"> δια-γελάω (s. γελάω), </span> verlachen. Intrans., lächeln, heiter sein; übertr., τὰ διαγελῶντα ϑαλάττης, die Stille des Meeres; ὥρας διαγελώσης, ἡμέρας, sich aufheitern; vom ersten Dämmern des Tages</li>
+<li> <span class="hel"> δια-γίγνομαι (γίγνομαι), </span> 1) eine Zeit hindurch dauern, sich behaupten od. erhalten; absol., sein Leben hinbringen; ἀπό τινος, von etwas leben; ἐὰν διαγιγνώμεϑα, wenn wir bis dahin leben; τὴν νύκτα, die Nacht hinbringen; oft c. partic., ζητῶν, immerfort untersucken. 2) dazwischen werden; von Zeiträumen: verlaufen; τούτῳ τῷ λόγῳ πιστευομένῳ πλέον ἢ χίλια ἔτη διαγέγονεν, die Erzählung wurde länger als 1000 Jahre geglaubt</li>
+<li> <span class="hel"> δια-γιγνώσκω (s. γιγνώσκω), </span> 1) unterscheiden; εὖ δ., genau erkennen. 2) entscheiden, von Gerichten; von Beschlüssen; διέγνωστο, es war beschlossen; κρίσις διεγνωσμένη, ausgesprochenes Urteil. 3) genau prüfen. 4) durchlesen</li>
+<li> <span class="hel"> δι-άγω (s. ἄγω), </span> 1) hindurch-, hinüberführen; hinbringen, verleben; oft auch absolut: sein Leben hinbringen, leben; ἐν τῇ φιλοσοφίᾳ, im Studium der Philosophie; ἐν τοῖς σκευοφόροις, als Packträger; sich aufhalten; zögern; am häufigsten mit partic., wo es = διατελέω einen fortwährenden Zustand bezeichnet; ἐλπίδας λέγων διῆγε, er machte ihnen fortwährend Hoffnungen. 2) durchführen, vollenden; dah. regieren, verwalten. 3) durchbringen, erhalten; auch = die Zeit vertreiben, ergötzen; hinhalten. 4) auseinanderführen</li>
+<li> <span class="hel"> δια-δάκνω (s. δάκνω), </span> zerbeißen; τινί, sich mit einem herumbeißen</li>
+<li> <span class="hel"> δια-δατέομαι (s. δατέομαι), </span> verteilen, unter sich verteilen</li>
+<li> <span class="hel"> δια-δείκνῡμι (s. δείκνυμι), </span> 1) zeigen, dartun; u. pass., διαδεικνύσϑω πολέμιος ἐών, er sei für einen Feind erklärt. 2) intrans., διέδεξε, es war deutlich, es zeigte sich</li>
+<li> <span class="hel"> δια-δέρκομαι (s. δέρκομαι), </span> durchblicken; einen durch etwas hindurch erblicken</li>
+<li> <span class="hel"> δια-δέω (s. δέω), </span> 1) durchbinden; um-, festbinden; bes. vom Diadem; dah. διαδήσαμενος, sich das Diadem aufgesetzt habend. 2) ab-, unterbinden</li>
+<li> <span class="hel"> δια-δηλέομαι (s. δηλέομαι), </span> sehr beschädigen, zu Grunde richten; von Hunden, = zerreißen</li>
+<li> <span class="hel"> δια-διδράσκω (s. διδράσκω), </span> entfliehen</li>
+<li> <span class="hel"> δια-δίδωμι (s. δίδωμι), </span> 1) von Hand zu Hand geben, überliefern; bes. λόγον, φήμην, verbreiten, ein Gerücht; τῇ σάλπιγγι διαδοϑείσης σιωπῆς, als durch die Trompete Ruhe hergestellt war; auch intrans., sich verbreiten; auch = nachlassen, wie ἐνδίδωμι. 2) verteilen, unter mehrere. 3) von sich geben, vom Unterleibe</li>
+<li> <span class="hel"> δια-δύομαι (s. δύω), mit aor. διαδῠναι, </span> durchgehen; τὸν κισσὸν διαδύς, durch den Epheu gedrungen; durchkommen, entschlüpfen; Ausflüchte brauchen, Winkelzüge machen</li>
+<li> <span class="hel"> δια-είδομαι (s. εἴδομαι), </span> sich zeigen, deutlich werden, hervortreten</li>
+<li> <span class="hel"> δια-ζάω (s. ζάω), </span> durchleben; auch mit partic., sein Leben mit etwas hinbringen</li>
+<li> <span class="hel"> δια-ζεύγνῡμι (s. ζεύγνυμι), </span> auseinander spannen, trennen; von der Ehe, διαζεύγνυσϑαι, sich scheiden</li>
+<li> <span class="hel"> δια-ζώννῡμι (s. ζώννυμι), </span> 1) umgürten; διεζωσμένοι, um die Mitte gegürtet; übh. = umgeben. 2) durch Gürten zusammenziehen; trennen, ἀπετείχισε τὸν αὐχένα διαζώσας ἐρύμασιν καὶ προβλήμασιν ἐκ ϑαλάττης ἐς ϑάλατταν, die Landzunge durch Festungswerke abschneiden; durchschnitten sein</li>
+'δι-άημι (s. ἄημι), </span> ': 'δι-άημι, </span> (s. ἄημι),',
+'δια-θειόω (s. ϑειόω), </span> ': 'δια-θειόω, </span> (s. ϑειόω),',
+'δια-θέω (s. ϑέω, </span> ': 'δια-θέω </span> (s. ϑέω),',
+'δια-θιγγάνω (s. ϑιγγάνω), </span> ': 'δια-θιγγάνω, </span> (s. ϑιγγάνω),',
+'δια-θλάω (s. ϑλάω), </span> ': 'δια-θλάω, </span> (s. ϑλάω),',
+'δια-θραύω (s. ϑραύω), </span> ': 'δια-θραύω, </span> (s. ϑραύω),',
+'διαιθρύπτω (s. ϑρύπτω), </span> ': 'διαιθρύπτω, </span> (s. ϑρύπτω),',
+'δια-θρώσκω (s. ϑρώσκω), </span> ': 'δια-θρώσκω, </span> (s. ϑρώσκω),',
+'δι-αιρέω (s. αἱρέωὶ, </span> ': 'δι-αιρέω </span> (s. αἱρέωὶ),',
+'δι-αίρω (s. αἴρω), </span> ': 'δι-αίρω, </span> (s. αἴρω),',
+'δι-αισθάνομαι (s. αἰσϑάνομαι), </span> ': 'δι-αισθάνομαι, </span> (s. αἰσϑάνομαι),',
+'δια-καθ-έζομαι (s. ἕζομαι), </span> ': 'δια-καθ-έζομαι, </span> (s. ἕζομαι),',
+'δια-κάθ-ημαι (s. ἧμαι), </span> ': 'δια-κάθ-ημαι, </span> (s. ἧμαι),',
+'δια-καθ-ίζω u. δια-καθ-ιζάνω (s. ἵζω), </span> ': 'δια-καθ-ίζω u. δια-καθ-ιζάνω, </span> (s. ἵζω),',
+'δια-καίω (s. καίω), </span> ': 'δια-καίω, </span> (s. καίω),',
+'δια-κατ-έχω (s. ἔχω), = κατέχειν, </span> ': 'δια-κατ-έχω, </span> (s. ἔχω), = κατέχειν,',
+'δια-κεάζω (s. κεάζω), </span>': 'δια-κεάζω, </span> (s. κεάζω), ',
+'διά-κειμαι (s. κεῖμαι), </span>': 'διά-κειμαι, </span> (s. κεῖμαι), ',
+'δια-κείρω (s. κείρω), </span>': 'δια-κείρω, </span> (s. κείρω), ',
+'δια-κελεύομαι (s. κελεύω), </span>': 'δια-κελεύομαι, </span> (s. κελεύω), ',
+'δια-κεράννῡμι (s. κεράννυμι), </span>': 'δια-κεράννῡμι, </span> (s. κεράννυμι), ',
+'δια-ίχρημι (s. κίχρημι), </span>': 'δια-ίχρημι, </span> (s. κίχρημι), ',
+'δια-κλάζω (s. κλάζω), </span>': 'δια-κλάζω, </span> (s. κλάζω), ',
+'δια-κλάω (s. κλάω), </span>': 'δια-κλάω, </span> (s. κλάω), ',
+'δια-κλείω (s. κλείω), </span>': 'δια-κλείω, </span> (s. κλείω), ',
+'δια-κλίνω (s. κλίνω), </span>': 'δια-κλίνω, </span> (s. κλίνω), ',
+'δι-ακούω (s. ἀκούω), </span>': 'δι-ακούω, </span> (s. ἀκούω), ',
+'δια-κράζω (s. κράζω), </span>': 'δια-κράζω, </span> (s. κράζω), ',
+'δια-κρίνω (s. κρίνω), </span>': 'δια-κρίνω, </span> (s. κρίνω), ',
+'δια-κρούω (s. κρούω), </span>': 'δια-κρούω, </span> (s. κρούω), ',
+'δια-λαγχάνω (s. λαγχάνω), </span>': 'δια-λαγχάνω, </span> (s. λαγχάνω), ',
+'δια-λαμβάνω (s. λαμβάνω), </span>': 'δια-λαμβάνω, </span> (s. λαμβάνω), ',
+'δια-λανθάνω (s. λανϑάνω), </span>': 'δια-λανθάνω, </span> (s. λανϑάνω), ',
+'δια-λύω (s. λύω </span>': 'δια-λύω, </span> (s. λύω), ',
+'δια-μανθάνω (s. μανϑάνω), </span>': 'δια-μανθάνω, </span> (s. μανϑάνω), ',
+'δι-αμαρτάνω (s. ἁμαρτάνω), </span>': 'δι-αμαρτάνω, </span> (s. ἁμαρτάνω), ',
+'δια-μασάομαι (s. μασάομαι), </span>': 'δια-μασάομαι, </span> (s. μασάομαι), ',
+'διαιμάχομαι (s. μάχομαι), </span>': 'διαιμάχομαι, </span> (s. μάχομαι), ',
+'δι-αμάω (s. ἀμάω), </span>': 'δι-αμάω, </span> ',
+δια-πλέκω (διαπέπλοχε Hippocr.), </span> mit den f1) dazwischen-, durch-, verflechten, ϑαυματὰ ἔργα, von Flechtwerk; übertragen, ἀγὴν δ., Winkelzüge machen; ϑρῆνον δ., einen Klagegesang kunstvoll anlegen. 2) übertr., βίον, das Leben hinbringen. Aber = zu Ende flechten, endigen. 3) auseinanderflechten, ausdehnen; στρατόν, auseinanderziehen</li>
+διαῤ-ῥήγνῡμι (ῥήγνυμι), </span> durchreißen, zersprengen. Pass., zerbersten, platzen</li>
+δι-αφύσσω (ίἀφύσσω), </span> herausschöpfen; πολλὸν διήφυσε σαρκὸς ὀδόντι, riss ein großes Stück Fleisch heraus</li>
+δια-ψάω (ψάω), </span> durchkratzen, durchscharren</li>
+δι-έδην (διίημι) </span> durchgängig</li>
+δι-εκ-βαίνω (βαίνω), </span> durch etwas hindurch- und herausgehen</li>
+δῑθυραμβο-χώνα (Μοῦσα), </span> Dithyramben schmiedend</li>
+<li> <span class="hel"> δικάζω (ιδίκη), </span> 1) richten, Recht sprechen; ἐς μέσον ἀμφοτέροισι δικάσσατε, sprecht beiden unparteiisch Recht; δίκην δικάζειν, einen Prozess entscheiden, einen Richterspruch fällen; ähnl. φυγήν τινι, Verbannung zuerkennen; οἱ δικασϑέντες, die Gerichteten, Verurteilten. Aber οἱ δικαζόμενοι, die Angeklagten. Übh. = einen entscheidenden Ausspruch tun; dah. = bestimmen; vom Orakel; ἐδίκασα ἐγὼ τούτῳ καὶ οὗτος ἐμοί, wir kamen in den Bestimmungen überein. 2) sich Recht sprechen lassen, vor Gericht streiten, prozessieren; gew. τινί, mit j-m; εἰ δ' ἄγ' ἐγὼν αὐτὸς δικάσω, ich werde selbst richterlich entscheiden, will selbst Richter sein; ἀμοιβηδὶς δὲ δίκαζον, die Alten sprachen abwechselnd, einer nach dem andern Recht; φόνον δικάζων, vor Gericht verteidigen</li>
+<li> <span class="hel"> δίκαιος (δίκη), </span> zuweilen; der nach Sitten, Brauch handelt. Gew. = gerecht, der seine Pflichten gegen Götter u. Menschen erfüllt; denn die Pflichten gegen Fremde sind bes. im δίκαιος einbegriffen, machen den Menschen zum wohlgesitteten. Bei Plat. wird δίκαιος auf das Verhalten gegen die Menschen, ὅσιος auf das gegen die Götter bezogen. Insbesondere ist δίκαιος: a) gleichmäßig; ἅρμα οὐ δίκαιον ἀδίκων ίππων συνεζευγμένων, ein gleichmäß gehender Wagen od. übh. ein tüchtiger; u. so von Sachen: tüchtig, brauchbar, was so ist, wie es sein soll; ἵππος δ. τὴν γνάϑον, mit gleichweichen Kinnbacken; vom Acker, dem πονηρόν entgeggstzt; αἱ ἑκατὸν ὀργυιαὶ δίκαιαί εἰσι στάδιον ἑξάπλεϑρον, gerade, vollkommen 100 Klafter. b) gesetzmäßig, recht; λογισμός, richtig; τὸ δίκαιον, das Recht; τὸ δίκαιον οὕτω ἔφερε, das Recht brachte es so mit sich; auch = ein Rechtsgrund; aber τὰ δίκαια πράξασϑαί τινα, einen zur gebührenden Strafe ziehen; ὥςπερ τὸ δ., wie es recht ist; τῶν δικαίων τυγχάνειν, sein Recht erlangen; τὰ δίκαια ἔχειν, λαμβάνειν, vom gebührenden Solde; πάντα τὰ δίκαια ποιεῖν τινι, einem alles erweisen, was er billiger Weise erwarten kann. Auch gegenseitige rechtliche Verhältnisse, Verträge; ἐμὲ φράζειν, es ist recht, billig, daß ich sage; δίκαιός εἰμι τῶνδ' ἀπηλλάχϑαι κακῶν, es ist billig, daß ich befreit bin; δίκαιός εἰμι οὔνομα τοῦτο φέρεσϑαι, ich verdiene; δίκαιοί εἰσιν ἀπιστότατοι εἶναι, sie sind berechtigt, bes. misstrauisch zu sein; δικαιότατος γὰρ εἶ τοὺς λόγους ἀπαγγέλλειν, es ziemt sich, daß du gerade; τούτου τὴν αἰτίαν ἔχειν οὗτός ἐστιν δ., es ist recht, daß er. Der Zusammenhang entscheidet, ob es zu übersetzen: wert, befugt, verpflichtet sein. Adv. δικαίως, z. B. μνᾶσϑαι </li>
+<li> <span class="hel"> (δικόω) ; ἐδικώϑησαν, </span> sie wurden gerichtet</li>
+<li> <span class="hel"> δί-κραιος (κεραία), </span> zweispaltig</li>
+<li> <span class="hel"> δικτυο ῦλκος ὁ (ἕλκω), </span> Netzzieher; οἱ δ., ein Stück des Aeschylus, das auch δικτυουργοί genannt wird</li>
+<li> <span class="hel"> δί-οπος (διέπω), ὁ, </span> Gebieter, Befehlshaber; Schiffsaufseher, Supercargo</li>
+<li> <span class="hel"> δίς-ᾱβος (ἥβη), </span> zweimal jung</li>
+<li> <span class="hel"> διστάζω (δίς), </span> zweifeln, ungewiß sein. Auch im pass., bezweifelt werden; παρουσία δισταζομένη, worüber man ungewiß ist</li>
+<li> <span class="hel"> δίχα (δίς), </span> zwiefach; a) zwiefach geteilt, getrennt; δίχα πάντας ἠρίϑμεον, ich teilte alle in zwei Haufen; δίχα πρίειν, entzwei sägen; δίχα ποιεῖν, trennen. Übertr., von zweierlei Meinung, zwiespältig, uneinig; εἰ καὶ σῆς δίχα γνώμης λέγω, anders als du meinst; δίχα πέφυκε τοῠ ἑτέρου, abgesondert, verschieden sein; dah. b) getrennt, abgesondert; auch = abgesondert, vor allen; δίχα τινός, ohne j-m, außer ihm; πόλεως δίχα, ohne die Bürgerschaft, d. i. ohne ihren Befehl</li>
+<li> <span class="hel"> δί-ωτος (οὖς), </span> mit zwei Ohren, Henkeln</li>
+<li> <span class="hel"> δορυσ-σόος (σεύω), </span> speerschwingend</li>
+<li> <span class="hel"> δράγδην (δράσσω), </span> fassend, ergreifend</li>
+<li> <span class="hel"> δρᾱπετίνδα (παίζειν, παιδιά), </span> ein Spiel, worin einer mit verbundenen Augen, τηροῦ, φυλάττου rufend, die anderen zu fangen sucht</li>
+<li> <span class="hel"> δρέπω (vgl. δρύπτω), </span> brechen, abbrechen, abpflücken, abschneiden, bes. Blumen u. Früchte; ἥβαν, die Ehre, die Jugend wie eine Blüte pflücken, ihrer froh werden, sie genießen; λειμῶνα Μουσῶν, vom Dichter; für sich pflücken, ernten; sogar αἷμα δρέψασϑαι, Blut kosten, vergießen; βάτοι ἱερὸν αἱμα δρέπονται, sie letzen sich am Blute</li>
+<li> <span class="hel"> δρύπτω (vgl. δρέπω), </span> kratzen, zerkratzen; von Weissagevögeln δρυψαμένω δ' ὀναχεσσι παρειὰς ἀμφί τε δειράς. Als Äußerung der Trauer u. des Schmerzes δρύπτε κάρα; βλέφαρον, auskratzen. Ἕκτορα πώλοις όστέα δρυπτόμενον, abgeschunden werden. Nach den Gramm. eigtl. vom Abschälen der Rinde von den Bäumen</li>
+<li> <span class="hel"> δυάω (δύη), </span> in's Unglück dringen, unglücklich machen</li>
+<li> <span class="hel"> δυς-αχής (ἄχος), </span> schwer zu beklagen</li>
+<li> <span class="hel"> δύς-ερμος (ἑρμῆς), </span> unglücklich, bes. im Finden, Gewinnen</li>
+<li> <span class="hel"> δυς-πάλαμος (παλάμη), </span> 1) wer sich nicht zu helfen weiß, ratlos. 2) der sich auf schlimme Kunstgriffe versteht; aber = heillos</li>
+<li> <span class="hel"> δυς-τράπελος (τρέπω), </span> schwer zu wenden, zu bewegen; bes. vom Charakter: eigensinnig, starrköpfig; übh. = schwierig. Adv., δυςτραπέλως, hinderlich, am unrechten Orte</li>
+<li> <span class="hel"> δυς-χεραίνω (δυςχερής), </span> 1) unwillig, unzufrieden sein od. werden; τί, mit etwas; bes. = Widerwillen gegen etwas haben, verwerfen; dah. pass., τὸ τῆς μοναρχίας ὄνομα δυςχεραινόμενον, mit Unwillen vernommen; ὑπό τινος, gehasst werden; τοῖς λόγοις, Schwierigkeiten beim Disputieren machen, trügerische Kunstgriffe anwenden. 2) Unwillen erregen; ῥήματα ἢ τέρψαντα ἢ δυςχεράναντα, bittere Worte; auch τὴν ὁδὸν δένδρα κόπτοντες, schwierig machen</li>
+<li> <span class="hel"> δυς-ώνυμος (ὄνομα), </span> 1) mit einem bösen Namen, = verhasst, verabscheut; öfter = verflucht. 2) dessen Namen eine böse Vorbedeutung enthält</li>
+<li> <span class="hel"> ἐάν (εἰ - ἄν), </span> 1) Bedingungspartikel, wann, wenn; hierbei stellt die Attische Prosa den Fall, dessen Eintreten der Redende wünscht, in den conjunct. conditional. mit ἐάν , den unerwünschten Fall in den optat. des Möglichen oder in den indicat. mit εἰ. Der conj. cond. ist nämlich zeitbedingend, er drückt einen festen zeitlichen Zusammenhang zwischen dem Eintreten der Bedingung und der Folge aus, was der optat. des Mögl. und der indicat. nicht tut. Der indicat. und der optat. des Möglichen in Bedingungssätzen sind also weniger anschaulich und lebhaft als der conj. cond.; was man aber wünscht, stellt man sich gern lebhafter vor als was man nicht wünscht. 2) Fragewort, in der indirecten Frage, ob, nach Verben des Versuchens und Untersuchens, conjunctiv. potential. In Vrbdg. mit anderen Partikeln merke ἐάν τε - ἐάν τε, sei es daß - oder daß; ἐάν περ, wenn anders; ἐὰν καί, wenn auch; καὶ ἐάν, auch wenn, selbst im Fall daß; ἐὰν μή, im Fall daß nicht, wo nicht</li>
+<li> <span class="hel"> ἔγ-γαλος (γαλα), </span> milchend</li>
+<li> <span class="hel"> ἐγ-καψι-κίδαλος (ἐγκάπτω), </span> Zwiebeln schluckend</li>
+<li> <span class="hel"> ἐγ-κυρέω u. ἐγ-κύρω (vgl. κύρω u. κυρέω), </span> hineingeraten, auf etwas stoßen, begegnen; ἐγκύρσας ἄτῃσιν, ins Unglück geraten; ἑκατονταετεῖ βιοτᾷ, der ein hundertjähriges Alter erreicht</li>
+<li> <span class="hel"> εἰδαίνομαι (εἴδομαι), </span> ähnlich sein</li>
+<li> <span class="hel"> εἱλέω (εἵλη), </span> an der Sonne wärmen</li>
+<li> <span class="hel"> εἴλη (εἰλέω), ἡ, </span> gewöhnlicher ἴλη, Haufen, bes. Reitergeschwader</li>
+<li> <span class="hel"> εἰληδόν (von εἰλέω), </span> verflochten; verwickelt</li>
+<li> <span class="hel"> ἐκ-τορμέω (τορμή), </span> vom geraden Wege abschweifen</li>
+<li> <span class="hel"> ἐλεγεῖος (ἔλεγος), </span> elegisch, zur Elegie gehörig</li>
+<li> <span class="hel"> ἐλ-λαμβάνομαι (λαμβάνω), </span> anfassen, ergreifen</li>
+<li> <span class="hel"> ἐλ-λόγιμος (ὃ ἐν λόγῳ ἐστί), </span> was in Betracht kommt, in Rechnung, Anschlag gebracht wird; angesehen; ἐπὶ σοφίᾳ, wegen der Weisheit; geradezu = gelehrt</li>
+<li> <span class="hel"> ἐμ-μαπέως (μάρπτω, μαπεῖν, </span> also im Griff, schnell zugreifend), sofort, sogleich, rasch</li>
+<li> <span class="hel"> ἔνδον (ἐν), </span> innen, drinnen, inwendig; bes. = zu Hause, daheim; φίλον ἔνδον ἔχειν, bei sich haben; ἔ, ἦσαν μναῖ, bares Geld im Hause; Διὸς ἔνδον, Ζεφύροιο ἔνδ., in Zeus Hause; ἔνδον ἑαυτοῠ ὤν, bei sich sein; οἱ ἔνδον, die im Hause, die Hausbewohner; τὰ ἔνδον, das Hauswesen; ἔνδον γέγραπται, weiter unten, im Buche. Auch = εἴσω, hinein</li>
+<li> <span class="hel"> ἐντός (ἐν), u. ἔντοσθε, </span> u. vor Vocalen ἔντοσϑεν, u. ἔντοσθι, </li>
+<li> <span class="hel"> ἑξ-ώροφος (ὀροφή), </span> mit sechs Stockwerken</li>
+<li> <span class="hel"> ἐπ-ήτριμος (ἤτριον, </span> also eigtl. angewebt), dicht an einander, πυρσοὶ ἐπήτριμοι, Fackel an Fackel gedrängt; von der Zeit, ἔπιπτον ἐπ., schnell nach einander</li>
+<li> <span class="hel"> ἐποποῖ (ἔποψ), </span> Ruf des Wiedehopfs</li>
+<li> <span class="hel"> ἐρέπτομαι (ἐρέπτω = τρέφω), </span> eigtl. rupfen, wie weidende Tiere, bes. Rinder fressen, grasen), fressen, verzehren, gew. von Pflanzen fressenden Tieren; δημόν, das Fett eines Leichnams</li>
+<li> <span class="hel"> εὐ-άν-ετος (ἀνίημι), </span> leicht aufzulösen</li>
+<li> <span class="hel"> εὐιακός (εὔιος), </span> bacchisch</li>
+<li> <span class="hel"> ζαης (ζα - ἄημι), ές, </span> stark, heftig wehend</li>
+<li> <span class="hel"> θέσκελος (ϑεός - ἐΐσκω), </span> gottgleich, gottähnlich, übh. übermenschlich, göttlich, erstaunenswürdig; ἔργα, wundervolle Taten; wundervolle Arbeit. Adv., ἔϊκτο δὲ ϑέσκελον αὐτῷ, er glich ihm wunderbar</li>
+<li> <span class="hel"> ἰ-αφ-έτης (ἰός), ὁ, </span> Pfeilabsender, Schütze</li>
+<li> <span class="hel"> ἴκταρ (ἵκω, </span> eigtl. hinkommend, das Ziel treffend), auf einen u. denselben Wurf oder Schlag, zusammentreffend, zugleich. Vom Orte: nahe kommend; sprichwörtlich: ταῦτα πάντα πρὸς τύραννον τὸ λεγόμενον οὐδ' ἴκταρ βάλλει, hat keinen Bezug auf ihn, trifft ihn nicht, eigtl. nicht einmal nahe trifft er, geschweige das Ziel</li>
+<li> <span class="hel"> ἱππό-κομος (κόμη), </span> rosshaarig, mit Rosshaaren versehen</li>
+<li> <span class="hel"> ἰσ-εννύω (ἔνος), </span> in gleichem Alter sein</li>
+<li> <span class="hel"> ἴφιος (ἶφι), </span> stark, kräftig; ἴφια μῆλα, die starken, wohlgenährten Schafe</li>
+<li> <span class="hel"> καλχαίνω (κάλχη, </span> eigtl. aussehen wie das stürmische Meer), in bewegter Gemütsstimmung sein, sorgend nachdenken, nachsinnen über etwas; ἀμφὶ τοῖςδε καλχαίνων τέκνοις, sorgend; λέκτρων στερηϑεὶς ὧν ἐκάλχαινεν τυχεῖν, heftig wünschen; für πορφύρεται, mit Purpur gefärbt</li>
+<li> <span class="hel"> (καυστειρός, </span> καυστειρὰ μάχη, die heiße Feldschlacht</li>
+<li> <span class="hel"> κοτυλ-ήρυτος (ἀρύω), </span> mit Bechern zu schöpfen, d. i. reichlich fließend; ὄξος, d. i. eine Kotyle Essig</li>
+<li> <span class="hel"> (λινάω, </span> Fangnetze, Garn stellen, im Garne fangen</li>
+<li> <span class="hel"> μύω (μῦ), </span> sich schließen, zuschließen, bes. von den Lippen u. den Augen; οὐ γάρ πω μύσαν ὄσσε ὑπὸ βλεφάροισιν, ich habe noch nicht die Augen im Schlafe geschlossen; übtr., ἀνατέτροφας ὅτι καὶ μύσῃ = ἡσυχάσῃ, von der Wunde, die sich schon zusammengeschlossen, hergenommen, der Schmerz, der sich schon gelegt hatte; παρέχειν μύσαντα καὶ ἀνδρείώς, mit zugemachten Augen</li>
+<li> <span class="hel"> ὀξίζω (ὄξος), </span> Essiggeschmack haben, sauer werden</li>
+<li> <span class="hel"> ὀρνῑθο-κόος (κοέω), </span> vogelkundig, der die Stimmen u. den Flug der Vögel versteht u. deuten kann</li>
+<li> <span class="hel"> ὀρσίτης (ὄρνυμι), ὁ, </span> ein kretischer Tanz</li>
+<li> <span class="hel"> σεμνός (σέβομαι), </span> ehrwürdig, verehrt, heilig; ursprünglich nur von Göttern u. ihnen angehörigen, geweihten Dingen; σεμνὰ ϑεός, die Rhea. In Athen heißen vorzugsweise σεμναὶ ϑεαί euphemistisch die Eumeniden, nicht Demeter u. Kora. Ἄντρον, von der Höhle des Cheiron, die Höhle, in welcher Zeus erzogen wurde; δόμος, Tempel des Zeus; λόγοι, von Orakeln. Auch von Menschen und Sachen: ehrwürdig; bes. von Herrschern; σεμνόν τι περιτιϑέναι τινί, schmücken; adv., σεμνῶς κεκοσμημένος, prächtig. Auch tadelnd, vornehm tuend, prunkend, stolz; in gutem Sinne: anständig; von Fischen: prächtig, kostbar. Σεμνὴ νόσος, der Aussatz, auch die Pest</li>
+<li> <span class="hel"> στεῖρος (στεῤῥός, </span> eigtl. starr, steif), hart, vom unergiebigen Erdboden, auch von Menschen u. Tieren: unfruchtbar; nur im fem., von unfruchtbaren Frauen</li>
