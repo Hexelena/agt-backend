@@ -17,8 +17,260 @@ operoneUrl = 'http://localhost/web/phayax/agt/res/operone/altspr/wadinhalt.html'
 operoneBaseUrl = "http://localhost/web/phayax/agt/res/operone/altspr/"
 
 DB_NAME = 'agt.sqlite'
+
 #operoneUrl = 'http://www.operone.de/altspr/wadinhalt.html'
 #operoneBaseUrl = "http://www.operone.de/altspr/"
+
+ABC = "αβγδεζηϑικλμνξοπρστυφχψω";
+
+# helpful link:
+# http://www.utf8-chartable.de/unicode-utf8-table.pl?start=7936&number=128&names=-&utf8=string-literal
+# 
+simplerDict = {
+
+    # big letters:
+    "Ἄ": "α",
+    "Ἀ": "α",
+    "Ἂ": "α",
+    "Ἆ": "α",
+    "Ἁ": "α",
+    "Ἅ": "α",
+
+    # standard accents for Alpha
+    "ὰ": "α",
+    "ά": "α",
+    "ᾶ": "α",
+    # additional letter (seems slightly different than above)
+    "ά": "α",
+
+    # spiriti for Alpha
+    "ἀ": "α",
+    "ἁ": "α",
+    # spiriti and accents for Alpha
+    "ἄ": "α",
+    "ἅ": "α",
+    "ἂ": "α",
+    "ἃ": "α",
+    "ἇ": "α",
+    "ἆ": "α",
+
+    # Alpha with whateverthe****
+    # TODO: figure out what this is.
+    # Maybe it's long/short sign...
+    "ᾱ": "α",
+    "ᾰ": "α",
+
+    # standard accents for Epsilon
+    "ὲ": "ε",
+    "έ": "ε",
+    # spiriti for Epsilon
+    "ἑ": "ε",
+    "ἐ": "ε",
+    # spiriti and accents for Epsilon
+    "ἓ": "ε",
+    "ἕ": "ε",
+    "ἒ": "ε",
+    "ἔ": "ε",
+
+    # standard accents for Eta
+    "ὴ": "η",
+    "ή": "η",
+    "ῆ": "η",
+    # additional letter (seems slightly different than above)
+    "ή": "η",
+
+    # spiriti for Eta
+    "ἠ": "η",
+    "ἡ": "η",
+    # spiriti and accents for Eta
+    "ἣ": "η",
+    "ἥ": "η",
+    "ἢ": "η",
+    "ἤ": "η",
+    "ἧ": "η",
+    "ἦ": "η",
+
+    # accents for Iota
+    "ὶ": "ι",
+    "ί": "ι",
+    "ῖ": "ι",
+    # additional letter (seems slightly different than above)
+    "ί": "ι",
+
+    # spiriti for Iota
+    "ἱ": "ι",
+    "ἰ": "ι",
+    # spiriti and accents for Iota
+    "ἳ": "ι",
+    "ἵ": "ι",
+    "ἲ": "ι",
+    "ἴ": "ι",
+    "ἷ": "ι",
+    "ἶ": "ι",
+
+    # Iota with whateverthe****
+    # TODO: figure out what this is.
+    # Maybe it's long/short sign...
+    "ῑ": "ι",
+    "ῐ": "ι",
+    # Ok so here we have iota with threma and accent
+    # - didnt't think of that -.-
+    "ΐ": "ι",
+    # and only with threma
+    "ϊ": "ι",
+
+    # accents for Omikron
+    "ὸ": "ο",
+    "ό": "ο",
+    # spiriti for Omikron
+    "ὁ": "ο",
+    "ὀ": "ο",
+    # spiriti and accents for Omikron
+    "ὃ": "ο",
+    "ὅ": "ο",
+    "ὂ": "ο",
+    "ὄ": "ο",
+
+
+    # spiriti for Rho
+    "ῤ": "ρ",
+    "ῥ": "ρ",
+
+    # standard accents for Ypsilon
+    "ύ": "υ",
+    "ὺ": "υ",
+    "ῦ": "υ",
+    # spiriti for Ypsilon
+    "ὐ": "υ",
+    "ὑ": "υ",
+    # spiriti and accents for Ypsilon
+    "ὓ": "υ",
+    "ὕ": "υ",
+    "ὒ": "υ",
+    "ὔ": "υ",
+    "ὗ": "υ",
+    "ὖ": "υ",
+
+    # Ypsilon with whateverthe****
+    # TODO: figure out what this is.
+    # Maybe it's long/short sign...
+    "ῡ": "υ",
+    "ῠ": "υ",
+
+    # accents for Omega
+    "ὼ": "ω",
+    "ώ": "ω",
+    "ῶ": "ω",
+    # additional letter (seems slightly different than above)
+    "ώ": "ω",
+
+    # spiriti for Omega
+    "ὡ": "ω",
+    "ὠ": "ω",
+    # spiriti and accents for Omega
+    "ὣ": "ω",
+    "ὥ": "ω",
+    "ὢ": "ω",
+    "ὤ": "ω",
+    "ὧ": "ω",
+    "ὦ": "ω",
+
+    # #######################
+    # special simpilfications
+    # #######################
+
+    # hyphens are not needed
+    "-": "",
+    # strip whitespaces
+    " ": "",
+
+    # unify Sigmas
+    "ς": "σ",
+    # unify Thetas
+    "ϑ": "θ"
+};
+
+GREEK_TO_ASCII_ROUGH = {
+    "α": "a",
+    "β": "b",
+    "γ": "g",
+    "δ": "d",
+    "ε": "e",
+    "ζ": "z",
+    "η": "e",
+    "θ": "t",
+    "ι": "i",
+    "κ": "k",
+    "λ": "l",
+    "μ": "m",
+    "ν": "n",
+    "ξ": "x",
+    "ο": "o",
+    "π": "p",
+    "ρ": "r",
+    "σ": "s",
+    "τ": "t",
+    "υ": "y",
+    "φ": "f",
+    "χ": "ch",
+    "ψ": "ps",
+    "ω": "o"
+}
+
+GREEK_TO_ASCII_PRECISE = {
+    "α": "a",
+    "β": "b",
+    "γ": "g",
+    "δ": "d",
+    "ε": "e",
+    "ζ": "z",
+    "η": "ä",   # ä <> e
+    "θ": "th",  # th <> t
+    "ι": "i",
+    "κ": "k",
+    "λ": "l",
+    "μ": "m",
+    "ν": "n",
+    "ξ": "x",
+    "ο": "o",
+    "π": "p",
+    "ρ": "r",
+    "σ": "s",
+    "τ": "t",
+    "υ": "y",
+    "φ": "ph",  # ph <> f
+    "χ": "ch",
+    "ψ": "ps",
+    "ω": "oo"   # oo <> o
+}
+
+
+
+def greek_simplify(input):
+    simple_greek = ""
+    for letter in input:
+        if letter in simplerDict:
+            simple_greek += simplerDict[letter]
+        else:
+            simple_greek += letter
+
+    return simple_greek
+
+def greek_to_ascii(input, precise):
+    ascii_string = ""
+    for letter in input:
+        if precise:
+            if letter in GREEK_TO_ASCII_PRECISE:
+                ascii_string += GREEK_TO_ASCII_PRECISE[letter]
+            else:
+                raise ValueError('input string contains unknown character:"{}"'.format(letter))
+        else:
+            if letter in GREEK_TO_ASCII_ROUGH:
+                ascii_string += GREEK_TO_ASCII_ROUGH[letter]
+            else:
+                raise ValueError('input string contains unknown character:"{}"'.format(letter))
+
+    return ascii_string
 
 
 class StdoutRedirector:
@@ -151,7 +403,8 @@ def createTables(connection):
     print("[Created table 'pageindex']")
     
     # Create a table of the content of all pages.
-    connection.execute('CREATE TABLE IF NOT EXISTS pagecontent(pagenum INTEGER, word TEXT, alternateWords TEXT, translation TEXT);')
+    #connection.execute('CREATE TABLE IF NOT EXISTS pagecontent(pagenum INTEGER, word TEXT, alternateWords TEXT, translation TEXT);')
+    connection.execute('CREATE TABLE IF NOT EXISTS pagecontent(roughword TEXT, preciseword TEXT, greek TEXT, alternategreek TEXT, translation TEXT);')
     print("[Created table 'pagecontent']")
 
 
@@ -258,8 +511,10 @@ def parsePage(c, page, idx):
         # with the get_text() method.
         subText = BeautifulSoup((str(element))[tlStartIndex:], 'html.parser')
         translation = str(subText.get_text()).strip()
-        pageNum = idx
-        c.execute('INSERT INTO pagecontent VALUES(?, ?, ?, ?)',(idx, main, alternate, translation,))
+        #pageNum = idx
+        rough = greek_to_ascii(greek_simplify(main), False)
+        precise = greek_to_ascii(greek_simplify(main), True)
+        c.execute('INSERT INTO pagecontent VALUES(?, ?, ?, ?, ?)',(rough, precise, main, alternate, translation,))
         #print(translation)
 
     return len(lis)
