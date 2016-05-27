@@ -8,7 +8,7 @@ var sequelize = new Sequelize(undefined, undefined, undefined, {
     'storgae': 'agt-dummy.sqlite'
 });
 
-var greek = require("./greek");
+var greek = require("./greektools");
 
 var app = express();
 

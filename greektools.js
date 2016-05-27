@@ -128,7 +128,6 @@ var simplerDict = {
 
 var abc = "αβγδεζηϑικλμνξοπρστυφχψω";
 
-
 function normalizeGreek(inputString) {
     var newString = "";
 
@@ -140,6 +139,14 @@ function normalizeGreek(inputString) {
         }
     }
     return newString;
+}
+
+function greekToAscii(inputString, precise) {
+    if (typeof(precise) != 'boolean') {
+        throw new TypeError('type of precise is not boolean but <' + typeof(precise) + '>');
+    }
+    
+
 }
 
 function isAfter(string, reference) {
