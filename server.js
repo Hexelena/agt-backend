@@ -1,12 +1,7 @@
 "use strict";
 
 var express = require("express");
-var Sequelize = require("sequelize");
-
-var sequelize = new Sequelize(undefined, undefined, undefined, {
-    'dialect': 'sqlite',
-    'storgae': 'agt-dummy.sqlite'
-});
+var sqlite3 = require("sqlite3");
 
 var greek = require("./greektools");
 
@@ -14,11 +9,11 @@ var app = express();
 
 var PORT = 8081;
 
+// open db connection
+var db = new sqlite3.Database('agt.sqlite');
+
 //var operoneurl = "http://localhost/web/phayax/agt/res/operone/altspr/wadinhalt.html";
 //var operonebaseurl = "http://localhost/web/phayax/agt/res/operone/altspr/";
-
-//var pageDict = [];
-//var pageContent = [];
 
 // ROOT
 
@@ -41,6 +36,9 @@ app.get("/dict", function (req, res) {
 // DICTIONARY QUERY
 app.get("/dict/:query", function (req, res) {
     console.log("incoming dict request for '" + req.params.query + "'. Processing as " + greek.normalizeGreek(req.params.query) + "'.");
+    db.all('SELECT * FROM pagecontent WHERE roughword LIKE ?;',[req.params.query + '%'], function(err, rows) {
+        res.json(rows)
+    });
     //res.send("received request for '" + req.params.query + "'. Searching for '" + greek.normalizeGreek(req.params.query) + "'.\nResult is possibly on page " + findPageLink(req.params.query));
     // var result = {
     //     "origSearch" : req.params.query,
@@ -48,12 +46,9 @@ app.get("/dict/:query", function (req, res) {
     //     "page" : findPageLink(req.params.query),
     //     "pageContent" : ""
     // }
-    res.status(501).json({'error':'not implemented'});
+    //res.status(501).json({'error':'not implemented'});
 });
 
 app.listen(PORT);
 
 console.log("agt-backend started on port " + PORT);
-
-//console.log("generating page dict");
-//generatePageDict();
