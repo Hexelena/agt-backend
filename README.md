@@ -5,15 +5,15 @@ Backend REST-API for an Ancient Greek Translator.
 The "Alpha" version works. You can make requests and use both precise and rough mode. Currently it is still limited to ascii words. 
 
 ## TODO
-Transform incoming requests to the internal ascii representation. That includes greek inputs.
-Maybe some small changes on the internal representation are necessary (e.g. ch -> c).
+Transform incoming requests to the internal ascii representation. That includes greek inputs.  
+Maybe some small changes on the internal representation are necessary (e.g. ch -> c).  
 Some frontend would be nice >.<.
 
 ## How it works
 The website [operone.de](http://operone.de) has a [section](http://operone.de/altspr/wadinhalt.html) with an ancient greek dictionary.  
 [dbgen.py](dbgen/dbgen.py) scrapes all the entries and writes them into a sqlite database.  
-The node server then accesses the database and provides a REST-API.
-A rough scheme of how this is works:  
+The node server then accesses the database and provides a REST-API.  
+A rough scheme of how this works:  
 <img src="concept/concept.png" width=700px>
 
 
