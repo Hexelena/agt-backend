@@ -297,7 +297,7 @@ def main():
         os.remove(DB_NAME)
         print('[Removed old database]')
 
-    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#
+    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% #
     # sqlite setup
     conn = sqlite3.connect(DB_NAME)
     print('[Created new database]')
@@ -306,20 +306,25 @@ def main():
     createTables(c)
 
 
-    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#
+    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% #
     # tkinter related
     app = App(c)
     app.mainloop()
 
-
-    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#
+    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% #
+    # create db indices
+    conn.execute('CREATE INDEX roughindex ON pagecontent (roughword)')
+    print('[Created index for rough lookup]')
+    conn.execute('CREATE INDEX preciseindex ON pagecontent (preciseword)')
+    print('[Created index for precise lookup]')
+    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% #
     # sqlite cleanup
     conn.commit()
     print('[Changes commited]')
     conn.close()
     print('[Database closed]')
 
-    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#
+    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% #
     # Debugging operone data
     logging.debug(unknown_set)
     probs = []
@@ -327,9 +332,6 @@ def main():
     logging.debug('problematic elements that could not easily be converted')
     for el in problematic_list:
         logging.debug(el)
-
-    parent_folder = os.getcwd()[:os.getcwd().rfind('/')]
-    os.rename('agt.sqlite', os.path.join(parent_folder, 'agt.sqlite'))
 
 if __name__ == '__main__':
     main()
