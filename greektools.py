@@ -30,7 +30,9 @@ GREEK_TO_ASCII_ROUGH = {
     "φ": "f",
     "χ": "ch",
     "ψ": "ps",
-    "ω": "o"
+    "ω": "o",
+    " ": " "	# mark as "known" letter
+
 }
 
 GREEK_TO_ASCII_PRECISE = {
@@ -57,7 +59,8 @@ GREEK_TO_ASCII_PRECISE = {
     "φ": "ph",  # ph <> f
     "χ": "ch",
     "ψ": "ps",
-    "ω": "oo"   # oo <> o
+    "ω": "oo",	# oo <> o
+    " ": " "	# mark as "known" letter
 }
 
 # helpful link:
@@ -280,7 +283,9 @@ GREEK_SIMPL_DICT = {
     # hyphens are not needed
     "-": "",
     # strip whitespaces
-    " ": "",
+    # don't do that it takes spaces between words
+    # better strip manually
+    #" ": "",
     # unify Rhos
     "ϱ": "ρ",
     # unify Sigmas
@@ -292,6 +297,7 @@ GREEK_SIMPL_DICT = {
 
 def greek_simplify(input):
     simple_greek = ""
+    input = input.strip()
     for letter in input:
         if letter in GREEK_SIMPL_DICT:
             simple_greek += GREEK_SIMPL_DICT[letter]
