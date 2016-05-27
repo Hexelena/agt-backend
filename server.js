@@ -36,7 +36,10 @@ app.get("/dict", function (req, res) {
 // DICTIONARY QUERY
 app.get("/dict/:query", function (req, res) {
     console.log("incoming dict request for '" + req.params.query + "'. Processing as " + greek.normalizeGreek(req.params.query) + "'.");
-    db.all('SELECT * FROM pagecontent WHERE roughword LIKE ?;',[req.params.query + '%'], function(err, rows) {
+    db.all('SELECT * FROM pagecontent WHERE roughword LIKE ? ORDER BY LENGTH(greek) ASC LIMIT 10;',[req.params.query + '%'], function(err, rows) {
+        if (err) {
+            console.log('error: ' + err);
+        }
         res.json(rows)
     });
     //res.send("received request for '" + req.params.query + "'. Searching for '" + greek.normalizeGreek(req.params.query) + "'.\nResult is possibly on page " + findPageLink(req.params.query));
