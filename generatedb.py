@@ -1,18 +1,22 @@
 #! /usr/bin/env python3
 
-import urllib.request
-import html
-import sqlite3
-import os # deleting the db
-import sys
-from bs4 import BeautifulSoup
-
+import os   # deleting the db
+import sys  # output redirection
+import html # unescape naugty html codes
+import urllib.request 
+import sqlite3  # db access
+import datetime
+# graphical interface imports
 import tkinter as tk
 import tkinter.ttk as ttk
 
-import datetime
+# installed modules
+from bs4 import BeautifulSoup
 
+# local files
 from fixer import OPERONE_FIX_DICT
+
+
 
 operoneUrl = 'http://localhost/web/phayax/agt/res/operone/altspr/wadinhalt.html'
 operoneBaseUrl = "http://localhost/web/phayax/agt/res/operone/altspr/"
