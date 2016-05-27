@@ -12,6 +12,7 @@ import tkinter.ttk as ttk
 
 import datetime
 
+from fixer import OPERONE_FIX_DICT
 
 operoneUrl = 'http://localhost/web/phayax/agt/res/operone/altspr/wadinhalt.html'
 operoneBaseUrl = "http://localhost/web/phayax/agt/res/operone/altspr/"
@@ -213,14 +214,27 @@ simplerDict = {
     "Ῥ": "ρ",
     "Έ": "ε",
 
+    "Α": "α",
+    "Β": "β",
     "Γ": "γ",
     "Δ": "δ",
+    "Ε": "ε",
+    "Ζ": "ζ",
+    "Η": "η",
     "Θ": "θ",
+    "Κ": "κ",
     "Λ": "λ",
+    "Μ": "μ",
+    "Ν": "ν",
     "Ξ": "ξ",
+    "Ο": "ο",
     "Π": "π",
+    "Ρ": "ρ",
     "Σ": "σ",
+    "Τ": "τ",
+    "Υ": "υ",
     "Φ": "φ",
+    "Χ": "χ",
     "Ψ": "ψ",
     "Ω": "ω",
 
@@ -232,7 +246,8 @@ simplerDict = {
     "-": "",
     # strip whitespaces
     " ": "",
-
+    # unify Rhos
+    "ϱ": "ρ",
     # unify Sigmas
     "ς": "σ",
     # unify Thetas
@@ -240,7 +255,7 @@ simplerDict = {
 };
 
 unknown_set = {""}
-brace_problems = []
+problematic_list = {""}
 
 GREEK_TO_ASCII_ROUGH = {
     "α": "a",
@@ -316,15 +331,16 @@ def greek_to_ascii(input, precise):
                 ascii_string += GREEK_TO_ASCII_PRECISE[letter]
             else:
                 pass
-                #unknown_set.add(letter)
+                unknown_set.add(letter)
+                problematic_list.add(input)
                 #print('unknown char: ' + letter + ' in input: <' + input + '>')
                 #raise ValueError('input string contains unknown character:"{}"'.format(letter))
         else:
             if letter in GREEK_TO_ASCII_ROUGH:
                 ascii_string += GREEK_TO_ASCII_ROUGH[letter]
             else:
-                #unknown_set.add(letter)
-                pass
+                unknown_set.add(letter)
+                problematic_list.add(input)
                 #print('unknown char: ' + letter + ' in input: <' + input + '>')
                 #raise ValueError('input string contains unknown character:"{}"'.format(letter))
 
@@ -497,24 +513,17 @@ def parseExceptions(line):
         line = line[:insertIdx] + ', </span>' + line[insertIdx:]
         print('\t\t Attempting to fix the mentioned problem. Please check:\n\t\t{}'.format(line))
 
-    fix_dict = {
-    '<span class="hel"> ἀδαγμός (δάκνω), ὁ, </span>':'<span class="hel"> ἀδαγμός, </span> (δάκνω), ὁ,',
-    'ἀ(ε)ίδασμος,':'ἀίδασμος, ἀείδασμος,',
-    'ἄ-κτι(σ)τος,':'ἄ-κτιτος, ἄ-κτιστος,',
-    '(ἀπ-αμπ-ίσχω),':'ἀπ-αμπ-ίσχω,',
-    '(ἀπ-αμπλακεῖν),': 'ἀπ-αμπλακεῖν,',
-    '(ἀποστάσιον),': 'ἀποστάσιον,'
-    }
-    for element in fix_dict:
+    #fix_dict = {
+    #'<span class="hel"> ἀδαγμός (δάκνω), ὁ, </span>':'<span class="hel"> ἀδαγμός, </span> (δάκνω), ὁ,',
+    #'ἀ(ε)ίδασμος,':'ἀίδασμος, ἀείδασμος,',
+    #'ἄ-κτι(σ)τος,':'ἄ-κτιτος, ἄ-κτιστος,',
+    #'(ἀπ-αμπ-ίσχω),':'ἀπ-αμπ-ίσχω,',
+    #'(ἀπ-αμπλακεῖν),': 'ἀπ-αμπλακεῖν,',
+    #'(ἀποστάσιον),': 'ἀποστάσιον,'
+    #}
+    for element in OPERONE_FIX_DICT:
         if line.find(element) != -1:
-            line = line.replace(element, fix_dict[element])
-
-    #if line.find('<span class="hel"> ἀδαγμός (δάκνω), ὁ,') != -1:
-
-
-    #Page 1 - ἁγιστεύω
-    #if line.find('<span class="hel"> ἁγιστεύω') != -1:
-    #   print('correcting ἁγιστεύω')
+            line = line.replace(element, OPERONE_FIX_DICT[element])
 
     return line
 
@@ -573,6 +582,8 @@ def parsePage(c, page, idx):
         # vocab is the raw string of the entry
         vocab = element.findChild().findChild().get_text().strip(', ')
 
+        vocab = vocab.replace('u.', ',')
+        vocab = vocab.replace('o.', ',')
         # versions is a list of the different lookup words of the entry
         versions = [version.strip() for version in vocab.split(',')]
         # main is the first version - we will just assume that this is what we want ...
@@ -592,8 +603,6 @@ def parsePage(c, page, idx):
         subText = BeautifulSoup((str(element))[tlStartIndex:], 'html.parser')
         translation = str(subText.get_text()).strip()
         #pageNum = idx
-        if main.find('(') != -1:
-            brace_problems.append(correctedLine)
         rough = greek_to_ascii(greek_simplify(main), False)
         precise = greek_to_ascii(greek_simplify(main), True)
         #c.execute('INSERT INTO pagecontent VALUES(?, ?, ?, ?, ?)',(rough, precise, main, alternate, translation,))
@@ -601,10 +610,6 @@ def parsePage(c, page, idx):
 
     return len(lis)
             
-
-
-
-    
 
 
 def main():
@@ -627,9 +632,9 @@ def main():
     conn.close()
     print('[Database closed]')
     print(unknown_set)
-    for line in brace_problems:
-        print(line)
-
+    probs = []
+    for el in problematic_list:
+        print(el)
 
 if __name__ == '__main__':
     main()
