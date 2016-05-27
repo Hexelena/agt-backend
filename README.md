@@ -7,6 +7,7 @@ The "Alpha" version works. You can make requests and use both precise and rough 
 ## TODO
 Transform incoming requests to the internal ascii representation. That includes greek inputs.  
 Maybe some small changes on the internal representation are necessary (e.g. ch -> c).  
+Make sure all greek letters are mentioned in the simplification dict. There are still plenty of capital letters that are uncovered.  
 Some frontend would be nice >.<.
 
 ## How it works
