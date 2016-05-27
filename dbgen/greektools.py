@@ -55,7 +55,7 @@ GREEK_TO_ASCII_PRECISE = {
     "σ": "s",
     "τ": "t",
     "υ": "y",
-    "φ": "ph",  # ph <> f
+    "φ": "f",
     "χ": "ch",
     "ψ": "ps",
     "ω": "oo",	# oo <> o

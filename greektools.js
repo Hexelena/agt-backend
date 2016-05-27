@@ -49,11 +49,16 @@ var GREEK_TO_ASCII_PRECISE = {
     "σ": "s",
     "τ": "t",
     "υ": "y",
-    "φ": "ph",  // ph <> f
+    "φ": "f",  // ph <> f
     "χ": "ch",
     "ψ": "ps",
     "ω": "oo",  // oo <> o
     " ": " "    // mark as "known" letter
+};
+
+var ASCII_GREEK_SIMPL_DICT = {
+    "ph" : "f",
+    "":""
 };
 
 // helpful link:
