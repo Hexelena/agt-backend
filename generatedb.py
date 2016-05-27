@@ -25,155 +25,204 @@ ABC = "αβγδεζηϑικλμνξοπρστυφχψω";
 
 # helpful link:
 # http://www.utf8-chartable.de/unicode-utf8-table.pl?start=7936&number=128&names=-&utf8=string-literal
-# 
+# upper part is taken from the above link
+
 simplerDict = {
-
-    # big letters:
-    "Ἄ": "α",
-    "Ἀ": "α",
-    "Ἂ": "α",
-    "Ἆ": "α",
-    "Ἁ": "α",
-    "Ἅ": "α",
-
-    # standard accents for Alpha
-    "ὰ": "α",
-    "ά": "α",
-    "ᾶ": "α",
-    # additional letter (seems slightly different than above)
-    "ά": "α",
-
-    # spiriti for Alpha
+    # Alpha
     "ἀ": "α",
     "ἁ": "α",
-    # spiriti and accents for Alpha
-    "ἄ": "α",
-    "ἅ": "α",
     "ἂ": "α",
     "ἃ": "α",
-    "ἇ": "α",
+    "ἄ": "α",
+    "ἅ": "α",
     "ἆ": "α",
-
-    # Alpha with whateverthe****
-    # TODO: figure out what this is.
-    # Maybe it's long/short sign...
-    "ᾱ": "α",
-    "ᾰ": "α",
-
-    # standard accents for Epsilon
-    "ὲ": "ε",
-    "έ": "ε",
-    # spiriti for Epsilon
-    "ἑ": "ε",
+    "ἇ": "α",
+    "Ἀ": "α",
+    "Ἁ": "α",
+    "Ἂ": "α",
+    "Ἃ": "α",
+    "Ἄ": "α",
+    "Ἅ": "α",
+    "Ἆ": "α",
+    "Ἇ": "α",
+    # Epsilon
     "ἐ": "ε",
-    # spiriti and accents for Epsilon
-    "ἓ": "ε",
-    "ἕ": "ε",
+    "ἑ": "ε",
     "ἒ": "ε",
+    "ἓ": "ε",
     "ἔ": "ε",
-
-    # standard accents for Eta
-    "ὴ": "η",
-    "ή": "η",
-    "ῆ": "η",
-    # additional letter (seems slightly different than above)
-    "ή": "η",
-
-    # spiriti for Eta
+    "ἕ": "ε",
+    "Ἐ": "ε",
+    "Ἑ": "ε",
+    "Ἒ": "ε",
+    "Ἓ": "ε",
+    "Ἔ": "ε",
+    "Ἕ": "ε",
+    # Eta
     "ἠ": "η",
     "ἡ": "η",
-    # spiriti and accents for Eta
-    "ἣ": "η",
-    "ἥ": "η",
     "ἢ": "η",
+    "ἣ": "η",
     "ἤ": "η",
-    "ἧ": "η",
+    "ἥ": "η",
     "ἦ": "η",
-
-    # accents for Iota
-    "ὶ": "ι",
-    "ί": "ι",
-    "ῖ": "ι",
-    # additional letter (seems slightly different than above)
-    "ί": "ι",
-
-    # spiriti for Iota
-    "ἱ": "ι",
+    "ἧ": "η",
+    "Ἠ": "η",
+    "Ἡ": "η",
+    "Ἢ": "η",
+    "Ἣ": "η",
+    "Ἤ": "η",
+    "Ἥ": "η",
+    "Ἦ": "η",
+    "Ἧ": "η",
+    # Iota
     "ἰ": "ι",
-    # spiriti and accents for Iota
-    "ἳ": "ι",
-    "ἵ": "ι",
+    "ἱ": "ι",
     "ἲ": "ι",
+    "ἳ": "ι",
     "ἴ": "ι",
-    "ἷ": "ι",
+    "ἵ": "ι",
     "ἶ": "ι",
-
-    # Iota with whateverthe****
-    # TODO: figure out what this is.
-    # Maybe it's long/short sign...
-    "ῑ": "ι",
-    "ῐ": "ι",
-    # Ok so here we have iota with threma and accent
-    # - didnt't think of that -.-
-    "ΐ": "ι",
-    # and only with threma
-    "ϊ": "ι",
-
-    # accents for Omikron
-    "ὸ": "ο",
-    "ό": "ο",
-    # spiriti for Omikron
-    "ὁ": "ο",
+    "ἷ": "ι",
+    "Ἰ": "ι",
+    "Ἱ": "ι",
+    "Ἲ": "ι",
+    "Ἳ": "ι",
+    "Ἴ": "ι",
+    "Ἵ": "ι",
+    "Ἶ": "ι",
+    "Ἷ": "ι",
+    # Omikron
     "ὀ": "ο",
-    # spiriti and accents for Omikron
-    "ὃ": "ο",
-    "ὅ": "ο",
+    "ὁ": "ο",
     "ὂ": "ο",
+    "ὃ": "ο",
     "ὄ": "ο",
+    "ὅ": "ο",
+    "Ὀ": "ο",
+    "Ὁ": "ο",
+    "Ὂ": "ο",
+    "Ὃ": "ο",
+    "Ὄ": "ο",
+    "Ὅ": "ο",
+    # Ypsilon
+    "ὐ": "υ",
+    "ὑ": "υ",
+    "ὒ": "υ",
+    "ὓ": "υ",
+    "ὔ": "υ",
+    "ὕ": "υ",
+    "ὖ": "υ",
+    "ὗ": "υ",
+    "Ὑ": "υ",
+    "Ὓ": "υ",
+    "Ὕ": "υ",
+    "Ὗ": "υ",
+    # Omega
+    "ὠ": "ω",
+    "ὡ": "ω",
+    "ὢ": "ω",
+    "ὣ": "ω",
+    "ὤ": "ω",
+    "ὥ": "ω",
+    "ὦ": "ω",
+    "ὧ": "ω",
+    "Ὠ": "ω",
+    "Ὡ": "ω",
+    "Ὢ": "ω",
+    "Ὣ": "ω",
+    "Ὤ": "ω",
+    "Ὥ": "ω",
+    "Ὦ": "ω",
+    "Ὧ": "ω",
+    # all of the above again with acut and gravis but
+    # for some reason this have other unicode values
+    "ὰ": "α",
+    "ά": "α",
+    "ὲ": "ε",
+    "έ": "ε",
+    "ὴ": "η",
+    "ή": "η",
+    "ὶ": "ι",
+    "ί": "ι",
+    "ὸ": "ο",
+    "ό": "ο",
+    "ὺ": "υ",
+    "ύ": "υ",
+    "ὼ": "ω",
+    "ώ": "ω",
 
+    # necessary accent signs not defined in above link:
 
-    # spiriti for Rho
+    "ά": "α",
+    "ᾱ": "α",
+    "ᾷ": "α",
+    "ᾶ": "α",
+    "ᾴ": "α",
+    "ᾳ": "α",
+    "ᾀ": "α",
+    "ᾰ": "α",
+    "ᾁ": "α",
+    "ᾆ": "α",
+    "ᾄ": "α",
+
+    "έ": "ε",
+
+    "ῃ": "η",
+    "ῆ": "η",
+    "ῄ": "η",
+    "ή": "η",
+    "ῇ": "η",
+
+    "ῗ": "ι",
+    "ῒ": "ι",
+    "Ι": "ι",
+    "ῖ": "ι",
+    "ῐ": "ι",
+    "ϊ": "ι",
+    "ΐ": "ι",
+    "ί": "ι",
+    "ῑ": "ι",
+    "ΐ": "ι",
+
+    "ό": "ο",
+
     "ῤ": "ρ",
     "ῥ": "ρ",
 
-    # standard accents for Ypsilon
     "ύ": "υ",
-    "ὺ": "υ",
+    "ΰ": "υ",
     "ῦ": "υ",
-    # spiriti for Ypsilon
-    "ὐ": "υ",
-    "ὑ": "υ",
-    # spiriti and accents for Ypsilon
-    "ὓ": "υ",
-    "ὕ": "υ",
-    "ὒ": "υ",
-    "ὔ": "υ",
-    "ὗ": "υ",
-    "ὖ": "υ",
-
-    # Ypsilon with whateverthe****
-    # TODO: figure out what this is.
-    # Maybe it's long/short sign...
-    "ῡ": "υ",
     "ῠ": "υ",
+    "ῡ": "υ",
+    "ΰ": "υ",
+    "ϋ": "υ",
 
-    # accents for Omega
-    "ὼ": "ω",
-    "ώ": "ω",
+    "ώ" :"ω",
+    "ᾤ" :"ω",
+    "ᾠ" :"ω",
+    "ῲ" :"ω",
+    "ῴ" :"ω",
+    "ῳ" :"ω",
+    "ῷ" :"ω",
     "ῶ": "ω",
-    # additional letter (seems slightly different than above)
-    "ώ": "ω",
 
-    # spiriti for Omega
-    "ὡ": "ω",
-    "ὠ": "ω",
-    # spiriti and accents for Omega
-    "ὣ": "ω",
-    "ὥ": "ω",
-    "ὢ": "ω",
-    "ὤ": "ω",
-    "ὧ": "ω",
-    "ὦ": "ω",
+    # Capitals:
+    
+    # (with accents)
+    "Ῥ": "ρ",
+    "Έ": "ε",
+
+    "Γ": "γ",
+    "Δ": "δ",
+    "Θ": "θ",
+    "Λ": "λ",
+    "Ξ": "ξ",
+    "Π": "π",
+    "Σ": "σ",
+    "Φ": "φ",
+    "Ψ": "ψ",
+    "Ω": "ω",
 
     # #######################
     # special simpilfications
@@ -189,6 +238,9 @@ simplerDict = {
     # unify Thetas
     "ϑ": "θ"
 };
+
+unknown_set = {""}
+brace_problems = []
 
 GREEK_TO_ASCII_ROUGH = {
     "α": "a",
@@ -263,12 +315,18 @@ def greek_to_ascii(input, precise):
             if letter in GREEK_TO_ASCII_PRECISE:
                 ascii_string += GREEK_TO_ASCII_PRECISE[letter]
             else:
-                raise ValueError('input string contains unknown character:"{}"'.format(letter))
+                pass
+                #unknown_set.add(letter)
+                #print('unknown char: ' + letter + ' in input: <' + input + '>')
+                #raise ValueError('input string contains unknown character:"{}"'.format(letter))
         else:
             if letter in GREEK_TO_ASCII_ROUGH:
                 ascii_string += GREEK_TO_ASCII_ROUGH[letter]
             else:
-                raise ValueError('input string contains unknown character:"{}"'.format(letter))
+                #unknown_set.add(letter)
+                pass
+                #print('unknown char: ' + letter + ' in input: <' + input + '>')
+                #raise ValueError('input string contains unknown character:"{}"'.format(letter))
 
     return ascii_string
 
@@ -439,6 +497,19 @@ def parseExceptions(line):
         line = line[:insertIdx] + ', </span>' + line[insertIdx:]
         print('\t\t Attempting to fix the mentioned problem. Please check:\n\t\t{}'.format(line))
 
+    fix_dict = {
+    '<span class="hel"> ἀδαγμός (δάκνω), ὁ, </span>':'<span class="hel"> ἀδαγμός, </span> (δάκνω), ὁ,',
+    'ἀ(ε)ίδασμος,':'ἀίδασμος, ἀείδασμος,',
+    'ἄ-κτι(σ)τος,':'ἄ-κτιτος, ἄ-κτιστος,',
+    '(ἀπ-αμπ-ίσχω),':'ἀπ-αμπ-ίσχω,',
+    '(ἀπ-αμπλακεῖν),': 'ἀπ-αμπλακεῖν,',
+    '(ἀποστάσιον),': 'ἀποστάσιον,'
+    }
+    for element in fix_dict:
+        if line.find(element) != -1:
+            line = line.replace(element, fix_dict[element])
+
+    #if line.find('<span class="hel"> ἀδαγμός (δάκνω), ὁ,') != -1:
 
 
     #Page 1 - ἁγιστεύω
@@ -468,7 +539,16 @@ def parseIndex(c):
     return pages
 
 def parsePage(c, page, idx):
-
+    """
+    Parses a single page of the operone dictionary:
+    Gets the page source:
+    fixes problematic html tags(not closed or wrongly placed mostly)
+    for every entry on the page:
+        runs parseExceptions on the line
+        takes the different parts of the line.
+        simplifies and copys the transformed versions.
+        writes the entry to the database
+    """
     page = urllib.request.urlopen(urllib.request.Request(operoneBaseUrl + page.get('href'))).read()
     page = page.decode('ISO-8859-1') # encoding of the operone pages
     page = html.unescape(page)
@@ -512,9 +592,11 @@ def parsePage(c, page, idx):
         subText = BeautifulSoup((str(element))[tlStartIndex:], 'html.parser')
         translation = str(subText.get_text()).strip()
         #pageNum = idx
+        if main.find('(') != -1:
+            brace_problems.append(correctedLine)
         rough = greek_to_ascii(greek_simplify(main), False)
         precise = greek_to_ascii(greek_simplify(main), True)
-        c.execute('INSERT INTO pagecontent VALUES(?, ?, ?, ?, ?)',(rough, precise, main, alternate, translation,))
+        #c.execute('INSERT INTO pagecontent VALUES(?, ?, ?, ?, ?)',(rough, precise, main, alternate, translation,))
         #print(translation)
 
     return len(lis)
@@ -544,6 +626,9 @@ def main():
     print('[Changes commited]')
     conn.close()
     print('[Database closed]')
+    print(unknown_set)
+    for line in brace_problems:
+        print(line)
 
 
 if __name__ == '__main__':
