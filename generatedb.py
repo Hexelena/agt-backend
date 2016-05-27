@@ -6,6 +6,7 @@ import html # unescape naugty html codes
 import urllib.request 
 import sqlite3  # db access
 import datetime
+import logging
 # graphical interface imports
 import tkinter as tk
 import tkinter.ttk as ttk
@@ -14,7 +15,7 @@ import tkinter.ttk as ttk
 from bs4 import BeautifulSoup
 
 # local files
-from fixer import OPERONE_FIX_DICT
+from fixer import ALL_FIX_DICT
 
 
 
@@ -337,7 +338,7 @@ def greek_to_ascii(input, precise):
                 pass
                 unknown_set.add(letter)
                 problematic_list.add(input)
-                #print('unknown char: ' + letter + ' in input: <' + input + '>')
+                logging.debug('unknown char: ' + letter + ' in input: <' + input + '>')
                 #raise ValueError('input string contains unknown character:"{}"'.format(letter))
         else:
             if letter in GREEK_TO_ASCII_ROUGH:
@@ -345,7 +346,7 @@ def greek_to_ascii(input, precise):
             else:
                 unknown_set.add(letter)
                 problematic_list.add(input)
-                #print('unknown char: ' + letter + ' in input: <' + input + '>')
+                logging.debug('unknown char: ' + letter + ' in input: <' + input + '>')
                 #raise ValueError('input string contains unknown character:"{}"'.format(letter))
 
     return ascii_string
@@ -478,12 +479,12 @@ def createTables(connection):
 
     # Create a table as an index of all pages.
     connection.execute('CREATE TABLE IF NOT EXISTS pageindex(idx INTEGER PRIMARY KEY, page TEXT, link TEXT);')
-    print("[Created table 'pageindex']")
+    logging.info("[Created table 'pageindex']")
     
     # Create a table of the content of all pages.
     #connection.execute('CREATE TABLE IF NOT EXISTS pagecontent(pagenum INTEGER, word TEXT, alternateWords TEXT, translation TEXT);')
     connection.execute('CREATE TABLE IF NOT EXISTS pagecontent(roughword TEXT, preciseword TEXT, greek TEXT, alternategreek TEXT, translation TEXT);')
-    print("[Created table 'pagecontent']")
+    logging.info("[Created table 'pagecontent']")
 
 
 def parseExceptions(line):
@@ -496,8 +497,9 @@ def parseExceptions(line):
     closeSpan += len('</span>')
     closeLi = line.find('</li>')
     if len(line[closeSpan:closeLi].strip()) == 0:
-        print('-----------------------------------------------------------------------')
-        print('[Warning] Possible problem in the following line.:\n\t{}'.format(line))
+        logging.info('Found line with problematic closing span, applying fix')
+        logging.debug('-----------------------------------------------------------------------')
+        logging.debug('[Warning] Possible problem in the following line.:\n\t{}'.format(line))
         # remove the wrongly placed closing span
         line = line[:line.find('</span>')] + line[line.find('</li>'):]
         # add the closing span at the first space after the greek word
@@ -515,7 +517,7 @@ def parseExceptions(line):
         # if we introduce a comma too much that is not a problem since the later part will
         # filter out commas.
         line = line[:insertIdx] + ', </span>' + line[insertIdx:]
-        print('\t\t Attempting to fix the mentioned problem. Please check:\n\t\t{}'.format(line))
+        logging.debug('\t\t Attempting to fix the mentioned problem. Please check:\n\t\t{}'.format(line))
 
     #fix_dict = {
     #'<span class="hel"> ἀδαγμός (δάκνω), ὁ, </span>':'<span class="hel"> ἀδαγμός, </span> (δάκνω), ὁ,',
@@ -525,9 +527,9 @@ def parseExceptions(line):
     #'(ἀπ-αμπλακεῖν),': 'ἀπ-αμπλακεῖν,',
     #'(ἀποστάσιον),': 'ἀποστάσιον,'
     #}
-    for element in OPERONE_FIX_DICT:
+    for element in ALL_FIX_DICT:
         if line.find(element) != -1:
-            line = line.replace(element, OPERONE_FIX_DICT[element])
+            line = line.replace(element, ALL_FIX_DICT[element])
 
     return line
 
@@ -617,10 +619,14 @@ def parsePage(c, page, idx):
 
 
 def main():
+    
+    logging.basicConfig(filename='dbgen.log', level=logging.DEBUG)
+    # remove old db file
     if os.path.exists(DB_NAME):
         os.remove(DB_NAME)
         print('[Removed old database]')
 
+    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#
     # sqlite setup
     conn = sqlite3.connect(DB_NAME)
     print('[Created new database]')
@@ -628,17 +634,28 @@ def main():
 
     createTables(c)
 
+
+    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#
+    # tkinter related
     app = App(c)
     app.mainloop()
 
+
+    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#
+    # sqlite cleanup
     conn.commit()
     print('[Changes commited]')
     conn.close()
     print('[Database closed]')
-    print(unknown_set)
+
+    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#
+    # Debugging operone data
+    logging.debug(unknown_set)
     probs = []
+    logging.debug('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
+    logging.debug('problematic elements that could not easily be converted')
     for el in problematic_list:
-        print(el)
+        logging.debug(el)
 
 if __name__ == '__main__':
     main()
