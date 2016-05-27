@@ -1,5 +1,12 @@
 "use strict";
+
 var express = require("express");
+var Sequelize = require("sequelize");
+
+var sequelize = new Sequelize(undefined, undefined, undefined, {
+    'dialect': 'sqlite',
+    'storgae': 'agt-dummy.sqlite'
+});
 
 var greek = require("./greek");
 
@@ -45,7 +52,6 @@ app.get("/dict/:query", function (req, res) {
 });
 
 app.listen(PORT);
-
 
 console.log("agt-backend started on port " + PORT);
 
