@@ -286,6 +286,10 @@ GREEK_SIMPL_DICT = {
     # don't do that it takes spaces between words
     # better strip manually
     #" ": "",
+
+    # no apostrophs
+    "'": "",
+
     # unify Rhos
     "ϱ": "ρ",
     # unify Sigmas
@@ -314,16 +318,12 @@ def greek_to_ascii(input, precise):
                 ascii_string += GREEK_TO_ASCII_PRECISE[letter]
             else:
                 pass
-                #unknown_set.add(letter)
-                #problematic_list.add(input)
                 logging.warning('unknown char: ' + letter + ' in input: <' + input + '>')
                 #raise ValueError('input string contains unknown character:"{}"'.format(letter))
         else:
             if letter in GREEK_TO_ASCII_ROUGH:
                 ascii_string += GREEK_TO_ASCII_ROUGH[letter]
             else:
-                #unknown_set.add(letter)
-                #problematic_list.add(input)
                 logging.warning('unknown char: ' + letter + ' in input: <' + input + '>')
                 #raise ValueError('input string contains unknown character:"{}"'.format(letter))
 
