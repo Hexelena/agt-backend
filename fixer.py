@@ -16,6 +16,8 @@ with open('operone_fixes.txt', 'r') as f:
 		line = line.strip(',') # strip commas at end of line
 		if line.startswith('#'):
 			continue
+		if len(line) == 0:
+			continue
 		if line.strip('[]') in STATES:
 			SECTION = line.strip('[]')
 
