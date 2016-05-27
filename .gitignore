@@ -2,3 +2,4 @@
 node_modules/
 # no clue where this is coming from
 npm-debug.log
+__pycache__/
