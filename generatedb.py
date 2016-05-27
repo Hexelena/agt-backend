@@ -31,11 +31,6 @@ DB_NAME = 'agt.sqlite'
 unknown_set = {""}
 problematic_list = {""}
 
-
-
-
-
-
 class StdoutRedirector:
     '''
     Eine Klasse um Output zu einem Text-Widget umzuleiten.
@@ -288,7 +283,7 @@ def parsePage(c, page, idx):
         #pageNum = idx
         rough = greek_to_ascii(greek_simplify(main), False)
         precise = greek_to_ascii(greek_simplify(main), True)
-        #c.execute('INSERT INTO pagecontent VALUES(?, ?, ?, ?, ?)',(rough, precise, main, alternate, translation,))
+        c.execute('INSERT INTO pagecontent VALUES(?, ?, ?, ?, ?)',(rough, precise, main, alternate, translation,))
         #print(translation)
 
     return len(lis)
