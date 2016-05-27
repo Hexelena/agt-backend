@@ -1,139 +1,305 @@
 "use strict";
 
+var GREEK_TO_ASCII_ROUGH = {
+    "α": "a",
+    "β": "b",
+    "γ": "g",
+    "δ": "d",
+    "ε": "e",
+    "ζ": "z",
+    "η": "e",
+    "θ": "t",
+    "ι": "i",
+    "κ": "k",
+    "λ": "l",
+    "μ": "m",
+    "ν": "n",
+    "ξ": "x",
+    "ο": "o",
+    "π": "p",
+    "ρ": "r",
+    "σ": "s",
+    "τ": "t",
+    "υ": "y",
+    "φ": "f",
+    "χ": "ch",
+    "ψ": "ps",
+    "ω": "o",
+    " ": " "    // mark as "known" letter
+};
 
-var simplerDict = {
+var GREEK_TO_ASCII_PRECISE = {
+    "α": "a",
+    "β": "b",
+    "γ": "g",
+    "δ": "d",
+    "ε": "e",
+    "ζ": "z",
+    "η": "ä",   // ä <> e
+    "θ": "th",  // th <> t
+    "ι": "i",
+    "κ": "k",
+    "λ": "l",
+    "μ": "m",
+    "ν": "n",
+    "ξ": "x",
+    "ο": "o",
+    "π": "p",
+    "ρ": "r",
+    "σ": "s",
+    "τ": "t",
+    "υ": "y",
+    "φ": "ph",  // ph <> f
+    "χ": "ch",
+    "ψ": "ps",
+    "ω": "oo",  // oo <> o
+    " ": " "    // mark as "known" letter
+};
 
-    // standard accents for Alpha
-    "ὰ": "α",
-    "ά": "α",
-    "ᾶ": "α",
-    // spiriti for Alpha
+// helpful link:
+// http://www.utf8-chartable.de/unicode-utf8-table.pl?start=7936&number=128&names=-&utf8=string-literal
+// upper part is taken from the above link
+var GREEK_SIMPL_DICT = {
+    // Alpha
     "ἀ": "α",
     "ἁ": "α",
-    // spiriti and accents for Alpha
-    "ἄ": "α",
-    "ἅ": "α",
     "ἂ": "α",
     "ἃ": "α",
-    "ἇ": "α",
+    "ἄ": "α",
+    "ἅ": "α",
     "ἆ": "α",
-
-    // Alpha with whateverthe****
-    // TODO: figure out what this is.
-    // Maybe it's long/short sign...
-    "ᾱ": "α",
-    "ᾰ": "α",
-
-    // standard accents for Epsilon
-    "ὲ": "ε",
-    "έ": "ε",
-    // spiriti for Epsilon
-    "ἑ": "ε",
+    "ἇ": "α",
+    "Ἀ": "α",
+    "Ἁ": "α",
+    "Ἂ": "α",
+    "Ἃ": "α",
+    "Ἄ": "α",
+    "Ἅ": "α",
+    "Ἆ": "α",
+    "Ἇ": "α",
+    // Epsilon
     "ἐ": "ε",
-    // spiriti and accents for Epsilon
-    "ἓ": "ε",
-    "ἕ": "ε",
+    "ἑ": "ε",
     "ἒ": "ε",
+    "ἓ": "ε",
     "ἔ": "ε",
-
-    // standard accents for Eta
-    "ὴ": "η",
-    "ή": "η",
-    "ῆ": "η",
-    // spiriti for Eta
+    "ἕ": "ε",
+    "Ἐ": "ε",
+    "Ἑ": "ε",
+    "Ἒ": "ε",
+    "Ἓ": "ε",
+    "Ἔ": "ε",
+    "Ἕ": "ε",
+    // Eta
     "ἠ": "η",
     "ἡ": "η",
-    // spiriti and accents for Eta
-    "ἣ": "η",
-    "ἥ": "η",
     "ἢ": "η",
+    "ἣ": "η",
     "ἤ": "η",
-    "ἧ": "η",
+    "ἥ": "η",
     "ἦ": "η",
-
-    // accents for Iota
-    "ὶ": "ι",
-    "ί": "ι",
-    "ῖ": "ι",
-    // spiriti for Iota
-    "ἱ": "ι",
+    "ἧ": "η",
+    "Ἠ": "η",
+    "Ἡ": "η",
+    "Ἢ": "η",
+    "Ἣ": "η",
+    "Ἤ": "η",
+    "Ἥ": "η",
+    "Ἦ": "η",
+    "Ἧ": "η",
+    // Iota
     "ἰ": "ι",
-    // spiriti and accents for Iota
-    "ἳ": "ι",
-    "ἵ": "ι",
+    "ἱ": "ι",
     "ἲ": "ι",
+    "ἳ": "ι",
     "ἴ": "ι",
-    "ἷ": "ι",
+    "ἵ": "ι",
     "ἶ": "ι",
-
-    // accents for Omikron
-    "ὸ": "ο",
-    "ό": "ο",
-    // spiriti for Omikron
-    "ὁ": "ο",
+    "ἷ": "ι",
+    "Ἰ": "ι",
+    "Ἱ": "ι",
+    "Ἲ": "ι",
+    "Ἳ": "ι",
+    "Ἴ": "ι",
+    "Ἵ": "ι",
+    "Ἶ": "ι",
+    "Ἷ": "ι",
+    // Omikron
     "ὀ": "ο",
-    // spiriti and accents for Omikron
-    "ὃ": "ο",
-    "ὅ": "ο",
+    "ὁ": "ο",
     "ὂ": "ο",
+    "ὃ": "ο",
     "ὄ": "ο",
+    "ὅ": "ο",
+    "Ὀ": "ο",
+    "Ὁ": "ο",
+    "Ὂ": "ο",
+    "Ὃ": "ο",
+    "Ὄ": "ο",
+    "Ὅ": "ο",
+    // Ypsilon
+    "ὐ": "υ",
+    "ὑ": "υ",
+    "ὒ": "υ",
+    "ὓ": "υ",
+    "ὔ": "υ",
+    "ὕ": "υ",
+    "ὖ": "υ",
+    "ὗ": "υ",
+    "Ὑ": "υ",
+    "Ὓ": "υ",
+    "Ὕ": "υ",
+    "Ὗ": "υ",
+    // Omega
+    "ὠ": "ω",
+    "ὡ": "ω",
+    "ὢ": "ω",
+    "ὣ": "ω",
+    "ὤ": "ω",
+    "ὥ": "ω",
+    "ὦ": "ω",
+    "ὧ": "ω",
+    "Ὠ": "ω",
+    "Ὡ": "ω",
+    "Ὢ": "ω",
+    "Ὣ": "ω",
+    "Ὤ": "ω",
+    "Ὥ": "ω",
+    "Ὦ": "ω",
+    "Ὧ": "ω",
+    // all of the above again with acut and gravis but
+    // for some reason this have other unicode values
+    "ὰ": "α",
+    "ά": "α",
+    "ὲ": "ε",
+    "έ": "ε",
+    "ὴ": "η",
+    "ή": "η",
+    "ὶ": "ι",
+    "ί": "ι",
+    "ὸ": "ο",
+    "ό": "ο",
+    "ὺ": "υ",
+    "ύ": "υ",
+    "ὼ": "ω",
+    "ώ": "ω",
 
+    // necessary accent signs not defined in above link:
 
-    // spiriti for Rho
+    "ά": "α",
+    "ᾱ": "α",
+    "ᾷ": "α",
+    "ᾶ": "α",
+    "ᾴ": "α",
+    "ᾳ": "α",
+    "ᾀ": "α",
+    "ᾰ": "α",
+    "ᾁ": "α",
+    "ᾆ": "α",
+    "ᾄ": "α",
+
+    "έ": "ε",
+
+    "ῃ": "η",
+    "ῆ": "η",
+    "ῄ": "η",
+    "ή": "η",
+    "ῇ": "η",
+
+    "ῗ": "ι",
+    "ῒ": "ι",
+    "Ι": "ι",
+    "ῖ": "ι",
+    "ῐ": "ι",
+    "ϊ": "ι",
+    "ΐ": "ι",
+    "ί": "ι",
+    "ῑ": "ι",
+    "ΐ": "ι",
+
+    "ό": "ο",
+
     "ῤ": "ρ",
     "ῥ": "ρ",
 
-    // standard accents for Ypsilon
     "ύ": "υ",
-    "ὺ": "υ",
+    "ΰ": "υ",
     "ῦ": "υ",
-    // spiriti for Ypsilon
-    "ὐ": "υ",
-    "ὑ": "υ",
-    // spiriti and accents for Ypsilon
-    "ὓ": "υ",
-    "ὕ": "υ",
-    "ὒ": "υ",
-    "ὔ": "υ",
-    "ὗ": "υ",
-    "ὖ": "υ",
+    "ῠ": "υ",
+    "ῡ": "υ",
+    "ΰ": "υ",
+    "ϋ": "υ",
 
-    // accents for Omega
-    "ὼ": "ω",
-    "ώ": "ω",
+    "ώ" :"ω",
+    "ᾤ" :"ω",
+    "ᾠ" :"ω",
+    "ῲ" :"ω",
+    "ῴ" :"ω",
+    "ῳ" :"ω",
+    "ῷ" :"ω",
     "ῶ": "ω",
-    // spiriti for Omega
-    "ὡ": "ω",
-    "ὠ": "ω",
-    // spiriti and accents for Omega
-    "ὣ": "ω",
-    "ὥ": "ω",
-    "ὢ": "ω",
-    "ὤ": "ω",
-    "ὧ": "ω",
-    "ὦ": "ω",
 
-    // #######################
+    // Capitals:
+    
+    // (with accents)
+    "Ῥ": "ρ",
+    "Έ": "ε",
+
+    "Α": "α",
+    "Β": "β",
+    "Γ": "γ",
+    "Δ": "δ",
+    "Ε": "ε",
+    "Ζ": "ζ",
+    "Η": "η",
+    "Θ": "θ",
+    "Κ": "κ",
+    "Λ": "λ",
+    "Μ": "μ",
+    "Ν": "ν",
+    "Ξ": "ξ",
+    "Ο": "ο",
+    "Π": "π",
+    "Ρ": "ρ",
+    "Σ": "σ",
+    "Τ": "τ",
+    "Υ": "υ",
+    "Φ": "φ",
+    "Χ": "χ",
+    "Ψ": "ψ",
+    "Ω": "ω",
+
+    // %%%%%%%%%%%%%%%%%%%%%%%
     // special simpilfications
-    // #######################
+    // %%%%%%%%%%%%%%%%%%%%%%%
 
     // hyphens are not needed
     "-": "",
     // strip whitespaces
-    " ": "",
+    // don't do that it takes spaces between words
+    // better strip manually
+    //" ": "",
 
+    // no apostrophs
+    "'": "",
+
+    // unify Rhos
+    "ϱ": "ρ",
     // unify Sigmas
-    "ς": "σ"
+    "ς": "σ",
+    // unify Thetas
+    "ϑ": "θ"
 };
 
-var abc = "αβγδεζηϑικλμνξοπρστυφχψω";
+var GREEK_ALPHABET = "αβγδεζηϑικλμνξοπρστυφχψω";
+
 
 function normalizeGreek(inputString) {
     var newString = "";
 
     for (var i = 0; i < inputString.length; i++) {
-        if (inputString[i] in simplerDict) {
-            newString += simplerDict[inputString[i]];
+        if (inputString[i] in GREEK_SIMPL_DICT) {
+            newString += GREEK_SIMPL_DICT[inputString[i]];
         } else {
             newString += inputString[i];
         }
@@ -160,11 +326,11 @@ function isAfter(string, reference) {
 
     var i = 0;
     while (true) {
-        //console.log("Entering Iteration No." + i + " of isAfter: (" + abc.indexOf(search[i]) + " vs " + abc.indexOf(ref[i]) + ").");
-        if (abc.indexOf(search[i]) > abc.indexOf(ref[i])) {
+        //console.log("Entering Iteration No." + i + " of isAfter: (" + GREEK_ALPHABET.indexOf(search[i]) + " vs " + GREEK_ALPHABET.indexOf(ref[i]) + ").");
+        if (GREEK_ALPHABET.indexOf(search[i]) > GREEK_ALPHABET.indexOf(ref[i])) {
             //console.log("'" + search + "' comes after '" + ref + "' | -> true");
             return true;
-        } else if (abc.indexOf(search[i]) < abc.indexOf(ref[i])) {
+        } else if (GREEK_ALPHABET.indexOf(search[i]) < GREEK_ALPHABET.indexOf(ref[i])) {
             //console.log("'" + search + "' comes before '" + ref + "' | -> false");
             return false;
         } else { // equal
@@ -174,7 +340,7 @@ function isAfter(string, reference) {
 }
 
 module.exports = {
-    abc             : abc,
+    GREEK_ALPHABET  : GREEK_ALPHABET,
     isAfter         : isAfter,
     normalizeGreek  : normalizeGreek
 };

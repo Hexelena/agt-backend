@@ -32,7 +32,6 @@ GREEK_TO_ASCII_ROUGH = {
     "ψ": "ps",
     "ω": "o",
     " ": " "	# mark as "known" letter
-
 }
 
 GREEK_TO_ASCII_PRECISE = {
@@ -276,9 +275,9 @@ GREEK_SIMPL_DICT = {
     "Ψ": "ψ",
     "Ω": "ω",
 
-    # #######################
+    # %%%%%%%%%%%%%%%%%%%%%%%
     # special simpilfications
-    # #######################
+    # %%%%%%%%%%%%%%%%%%%%%%%
 
     # hyphens are not needed
     "-": "",
