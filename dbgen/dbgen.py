@@ -328,6 +328,9 @@ def main():
     for el in problematic_list:
         logging.debug(el)
 
+    parent_folder = os.getcwd()[:os.getcwd().rfind('/')]
+    os.rename('agt.sqlite', os.path.join(parent_folder, 'agt.sqlite'))
+
 if __name__ == '__main__':
     main()
 
