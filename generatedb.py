@@ -15,8 +15,8 @@ import tkinter.ttk as ttk
 from bs4 import BeautifulSoup
 
 # local files
-from fixer import ALL_FIX_DICT
-
+from fixer import ALL_FIX_DICT, VOCAB_FIX_DICT
+from greektools import greek_simplify, greek_to_ascii
 
 
 operoneUrl = 'http://localhost/web/phayax/agt/res/operone/altspr/wadinhalt.html'
@@ -27,329 +27,13 @@ DB_NAME = 'agt.sqlite'
 #operoneUrl = 'http://www.operone.de/altspr/wadinhalt.html'
 #operoneBaseUrl = "http://www.operone.de/altspr/"
 
-ABC = "αβγδεζηϑικλμνξοπρστυφχψω";
-
-# helpful link:
-# http://www.utf8-chartable.de/unicode-utf8-table.pl?start=7936&number=128&names=-&utf8=string-literal
-# upper part is taken from the above link
-
-simplerDict = {
-    # Alpha
-    "ἀ": "α",
-    "ἁ": "α",
-    "ἂ": "α",
-    "ἃ": "α",
-    "ἄ": "α",
-    "ἅ": "α",
-    "ἆ": "α",
-    "ἇ": "α",
-    "Ἀ": "α",
-    "Ἁ": "α",
-    "Ἂ": "α",
-    "Ἃ": "α",
-    "Ἄ": "α",
-    "Ἅ": "α",
-    "Ἆ": "α",
-    "Ἇ": "α",
-    # Epsilon
-    "ἐ": "ε",
-    "ἑ": "ε",
-    "ἒ": "ε",
-    "ἓ": "ε",
-    "ἔ": "ε",
-    "ἕ": "ε",
-    "Ἐ": "ε",
-    "Ἑ": "ε",
-    "Ἒ": "ε",
-    "Ἓ": "ε",
-    "Ἔ": "ε",
-    "Ἕ": "ε",
-    # Eta
-    "ἠ": "η",
-    "ἡ": "η",
-    "ἢ": "η",
-    "ἣ": "η",
-    "ἤ": "η",
-    "ἥ": "η",
-    "ἦ": "η",
-    "ἧ": "η",
-    "Ἠ": "η",
-    "Ἡ": "η",
-    "Ἢ": "η",
-    "Ἣ": "η",
-    "Ἤ": "η",
-    "Ἥ": "η",
-    "Ἦ": "η",
-    "Ἧ": "η",
-    # Iota
-    "ἰ": "ι",
-    "ἱ": "ι",
-    "ἲ": "ι",
-    "ἳ": "ι",
-    "ἴ": "ι",
-    "ἵ": "ι",
-    "ἶ": "ι",
-    "ἷ": "ι",
-    "Ἰ": "ι",
-    "Ἱ": "ι",
-    "Ἲ": "ι",
-    "Ἳ": "ι",
-    "Ἴ": "ι",
-    "Ἵ": "ι",
-    "Ἶ": "ι",
-    "Ἷ": "ι",
-    # Omikron
-    "ὀ": "ο",
-    "ὁ": "ο",
-    "ὂ": "ο",
-    "ὃ": "ο",
-    "ὄ": "ο",
-    "ὅ": "ο",
-    "Ὀ": "ο",
-    "Ὁ": "ο",
-    "Ὂ": "ο",
-    "Ὃ": "ο",
-    "Ὄ": "ο",
-    "Ὅ": "ο",
-    # Ypsilon
-    "ὐ": "υ",
-    "ὑ": "υ",
-    "ὒ": "υ",
-    "ὓ": "υ",
-    "ὔ": "υ",
-    "ὕ": "υ",
-    "ὖ": "υ",
-    "ὗ": "υ",
-    "Ὑ": "υ",
-    "Ὓ": "υ",
-    "Ὕ": "υ",
-    "Ὗ": "υ",
-    # Omega
-    "ὠ": "ω",
-    "ὡ": "ω",
-    "ὢ": "ω",
-    "ὣ": "ω",
-    "ὤ": "ω",
-    "ὥ": "ω",
-    "ὦ": "ω",
-    "ὧ": "ω",
-    "Ὠ": "ω",
-    "Ὡ": "ω",
-    "Ὢ": "ω",
-    "Ὣ": "ω",
-    "Ὤ": "ω",
-    "Ὥ": "ω",
-    "Ὦ": "ω",
-    "Ὧ": "ω",
-    # all of the above again with acut and gravis but
-    # for some reason this have other unicode values
-    "ὰ": "α",
-    "ά": "α",
-    "ὲ": "ε",
-    "έ": "ε",
-    "ὴ": "η",
-    "ή": "η",
-    "ὶ": "ι",
-    "ί": "ι",
-    "ὸ": "ο",
-    "ό": "ο",
-    "ὺ": "υ",
-    "ύ": "υ",
-    "ὼ": "ω",
-    "ώ": "ω",
-
-    # necessary accent signs not defined in above link:
-
-    "ά": "α",
-    "ᾱ": "α",
-    "ᾷ": "α",
-    "ᾶ": "α",
-    "ᾴ": "α",
-    "ᾳ": "α",
-    "ᾀ": "α",
-    "ᾰ": "α",
-    "ᾁ": "α",
-    "ᾆ": "α",
-    "ᾄ": "α",
-
-    "έ": "ε",
-
-    "ῃ": "η",
-    "ῆ": "η",
-    "ῄ": "η",
-    "ή": "η",
-    "ῇ": "η",
-
-    "ῗ": "ι",
-    "ῒ": "ι",
-    "Ι": "ι",
-    "ῖ": "ι",
-    "ῐ": "ι",
-    "ϊ": "ι",
-    "ΐ": "ι",
-    "ί": "ι",
-    "ῑ": "ι",
-    "ΐ": "ι",
-
-    "ό": "ο",
-
-    "ῤ": "ρ",
-    "ῥ": "ρ",
-
-    "ύ": "υ",
-    "ΰ": "υ",
-    "ῦ": "υ",
-    "ῠ": "υ",
-    "ῡ": "υ",
-    "ΰ": "υ",
-    "ϋ": "υ",
-
-    "ώ" :"ω",
-    "ᾤ" :"ω",
-    "ᾠ" :"ω",
-    "ῲ" :"ω",
-    "ῴ" :"ω",
-    "ῳ" :"ω",
-    "ῷ" :"ω",
-    "ῶ": "ω",
-
-    # Capitals:
-    
-    # (with accents)
-    "Ῥ": "ρ",
-    "Έ": "ε",
-
-    "Α": "α",
-    "Β": "β",
-    "Γ": "γ",
-    "Δ": "δ",
-    "Ε": "ε",
-    "Ζ": "ζ",
-    "Η": "η",
-    "Θ": "θ",
-    "Κ": "κ",
-    "Λ": "λ",
-    "Μ": "μ",
-    "Ν": "ν",
-    "Ξ": "ξ",
-    "Ο": "ο",
-    "Π": "π",
-    "Ρ": "ρ",
-    "Σ": "σ",
-    "Τ": "τ",
-    "Υ": "υ",
-    "Φ": "φ",
-    "Χ": "χ",
-    "Ψ": "ψ",
-    "Ω": "ω",
-
-    # #######################
-    # special simpilfications
-    # #######################
-
-    # hyphens are not needed
-    "-": "",
-    # strip whitespaces
-    " ": "",
-    # unify Rhos
-    "ϱ": "ρ",
-    # unify Sigmas
-    "ς": "σ",
-    # unify Thetas
-    "ϑ": "θ"
-};
 
 unknown_set = {""}
 problematic_list = {""}
 
-GREEK_TO_ASCII_ROUGH = {
-    "α": "a",
-    "β": "b",
-    "γ": "g",
-    "δ": "d",
-    "ε": "e",
-    "ζ": "z",
-    "η": "e",
-    "θ": "t",
-    "ι": "i",
-    "κ": "k",
-    "λ": "l",
-    "μ": "m",
-    "ν": "n",
-    "ξ": "x",
-    "ο": "o",
-    "π": "p",
-    "ρ": "r",
-    "σ": "s",
-    "τ": "t",
-    "υ": "y",
-    "φ": "f",
-    "χ": "ch",
-    "ψ": "ps",
-    "ω": "o"
-}
-
-GREEK_TO_ASCII_PRECISE = {
-    "α": "a",
-    "β": "b",
-    "γ": "g",
-    "δ": "d",
-    "ε": "e",
-    "ζ": "z",
-    "η": "ä",   # ä <> e
-    "θ": "th",  # th <> t
-    "ι": "i",
-    "κ": "k",
-    "λ": "l",
-    "μ": "m",
-    "ν": "n",
-    "ξ": "x",
-    "ο": "o",
-    "π": "p",
-    "ρ": "r",
-    "σ": "s",
-    "τ": "t",
-    "υ": "y",
-    "φ": "ph",  # ph <> f
-    "χ": "ch",
-    "ψ": "ps",
-    "ω": "oo"   # oo <> o
-}
 
 
 
-def greek_simplify(input):
-    simple_greek = ""
-    for letter in input:
-        if letter in simplerDict:
-            simple_greek += simplerDict[letter]
-        else:
-            simple_greek += letter
-
-    return simple_greek
-
-def greek_to_ascii(input, precise):
-    ascii_string = ""
-    for letter in input:
-        if precise:
-            if letter in GREEK_TO_ASCII_PRECISE:
-                ascii_string += GREEK_TO_ASCII_PRECISE[letter]
-            else:
-                pass
-                unknown_set.add(letter)
-                problematic_list.add(input)
-                logging.debug('unknown char: ' + letter + ' in input: <' + input + '>')
-                #raise ValueError('input string contains unknown character:"{}"'.format(letter))
-        else:
-            if letter in GREEK_TO_ASCII_ROUGH:
-                ascii_string += GREEK_TO_ASCII_ROUGH[letter]
-            else:
-                unknown_set.add(letter)
-                problematic_list.add(input)
-                logging.debug('unknown char: ' + letter + ' in input: <' + input + '>')
-                #raise ValueError('input string contains unknown character:"{}"'.format(letter))
-
-    return ascii_string
 
 
 class StdoutRedirector:
@@ -497,9 +181,8 @@ def parseExceptions(line):
     closeSpan += len('</span>')
     closeLi = line.find('</li>')
     if len(line[closeSpan:closeLi].strip()) == 0:
-        logging.info('Found line with problematic closing span, applying fix')
-        logging.debug('-----------------------------------------------------------------------')
-        logging.debug('[Warning] Possible problem in the following line.:\n\t{}'.format(line))
+        logging.info('-----------------------------------------------------------------------')
+        logging.info('[Warning] Possible problem in the following line.:\n\t{}'.format(line))
         # remove the wrongly placed closing span
         line = line[:line.find('</span>')] + line[line.find('</li>'):]
         # add the closing span at the first space after the greek word
@@ -517,19 +200,11 @@ def parseExceptions(line):
         # if we introduce a comma too much that is not a problem since the later part will
         # filter out commas.
         line = line[:insertIdx] + ', </span>' + line[insertIdx:]
-        logging.debug('\t\t Attempting to fix the mentioned problem. Please check:\n\t\t{}'.format(line))
+        logging.info('\t\t Attempting to fix the mentioned problem. Please check:\n\t\t{}'.format(line))
 
-    #fix_dict = {
-    #'<span class="hel"> ἀδαγμός (δάκνω), ὁ, </span>':'<span class="hel"> ἀδαγμός, </span> (δάκνω), ὁ,',
-    #'ἀ(ε)ίδασμος,':'ἀίδασμος, ἀείδασμος,',
-    #'ἄ-κτι(σ)τος,':'ἄ-κτιτος, ἄ-κτιστος,',
-    #'(ἀπ-αμπ-ίσχω),':'ἀπ-αμπ-ίσχω,',
-    #'(ἀπ-αμπλακεῖν),': 'ἀπ-αμπλακεῖν,',
-    #'(ἀποστάσιον),': 'ἀποστάσιον,'
-    #}
+    # apply fix dict for whole lines
     for element in ALL_FIX_DICT:
-        if line.find(element) != -1:
-            line = line.replace(element, ALL_FIX_DICT[element])
+        line = line.replace(element, ALL_FIX_DICT[element])
 
     return line
 
@@ -588,8 +263,10 @@ def parsePage(c, page, idx):
         # vocab is the raw string of the entry
         vocab = element.findChild().findChild().get_text().strip(', ')
 
-        vocab = vocab.replace('u.', ',')
-        vocab = vocab.replace('o.', ',')
+        # apply fix dict for vocab part
+        for entry in VOCAB_FIX_DICT:
+            vocab = vocab.replace(entry, VOCAB_FIX_DICT[entry])
+
         # versions is a list of the different lookup words of the entry
         versions = [version.strip() for version in vocab.split(',')]
         # main is the first version - we will just assume that this is what we want ...
@@ -615,12 +292,11 @@ def parsePage(c, page, idx):
         #print(translation)
 
     return len(lis)
-            
 
 
 def main():
     
-    logging.basicConfig(filename='dbgen.log', level=logging.DEBUG)
+    logging.basicConfig(filename='dbgen.log', filemode='w', level=logging.WARNING)
     # remove old db file
     if os.path.exists(DB_NAME):
         os.remove(DB_NAME)
