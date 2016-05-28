@@ -12,9 +12,6 @@ var PORT = 8081;
 // open db connection
 var db = new sqlite3.Database('agt.sqlite');
 
-//var operoneurl = "http://localhost/web/phayax/agt/res/operone/altspr/wadinhalt.html";
-//var operonebaseurl = "http://localhost/web/phayax/agt/res/operone/altspr/";
-
 // ROOT
 
 app.get("/", function (req, res) {
@@ -54,14 +51,14 @@ app.get("/dict/:mode/:query", function (req, res) {
     // then orders them by length (assuming that words that have a more similar length to the query are more relevant)
     // then limits them (for now)
     if (req.params.mode === "rough") {
-        db.all('SELECT * FROM pagecontent WHERE roughword LIKE ? ORDER BY LENGTH(greek) ASC LIMIT 10;',[req.params.query + '%'], function(err, rows) {
+        db.all('SELECT greek, alternategreek, translation FROM pagecontent WHERE roughword LIKE ? ORDER BY LENGTH(greek) ASC LIMIT 10;',[req.params.query + '%'], function(err, rows) {
             if (err) {
                 console.log('error: ' + err);
             }
             res.json(rows)
         });
     } else if (req.params.mode === "precise") {
-        db.all('SELECT * FROM pagecontent WHERE preciseword LIKE ? ORDER BY LENGTH(greek) ASC LIMIT 10;',[req.params.query + '%'], function(err, rows) {
+        db.all('SELECT greek, alternategreek, translation FROM pagecontent WHERE preciseword LIKE ? ORDER BY LENGTH(greek) ASC LIMIT 10;',[req.params.query + '%'], function(err, rows) {
             if (err) {
                 console.log('error: ' + err);
             }
