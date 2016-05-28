@@ -157,13 +157,13 @@ def fixBadHtml(source):
 def createTables(connection):
 
     # Create a table as an index of all pages.
-    connection.execute('CREATE TABLE IF NOT EXISTS pageindex(idx INTEGER PRIMARY KEY, page TEXT, link TEXT);')
-    logging.info("[Created table 'pageindex']")
+    #connection.execute('CREATE TABLE IF NOT EXISTS pageindex(idx INTEGER PRIMARY KEY, page TEXT, link TEXT);')
+    #logging.info("[Created table 'pageindex']")
     
     # Create a table of the content of all pages.
     #connection.execute('CREATE TABLE IF NOT EXISTS pagecontent(pagenum INTEGER, word TEXT, alternateWords TEXT, translation TEXT);')
-    connection.execute('CREATE TABLE IF NOT EXISTS pagecontent(roughword TEXT, preciseword TEXT, greek TEXT, alternategreek TEXT, translation TEXT);')
-    logging.info("[Created table 'pagecontent']")
+    connection.execute('CREATE TABLE IF NOT EXISTS operonedict(roughword TEXT, preciseword TEXT, greek TEXT, alternategreek TEXT, translation TEXT);')
+    logging.info("[Created table 'operonedict']")
 
 
 def parseExceptions(line):
@@ -215,11 +215,11 @@ def parseIndex(c):
 
     pages = getListLinks(soup)
 
-    for idx, entry in enumerate(pages):
-        page = entry.get_text(strip=True)
-        link = entry.get('href')
-        params = (idx + 1, page, link,)
-        c.execute('INSERT INTO pageindex VALUES(?, ?, ?);', params)
+    #for idx, entry in enumerate(pages):
+    #    page = entry.get_text(strip=True)
+    #    link = entry.get('href')
+    #    params = (idx + 1, page, link,)
+    #    c.execute('INSERT INTO pageindex VALUES(?, ?, ?);', params)
 
     return pages
 
@@ -283,7 +283,7 @@ def parsePage(c, page, idx):
         #pageNum = idx
         rough = greek_to_ascii(greek_simplify(main), False)
         precise = greek_to_ascii(greek_simplify(main), True)
-        c.execute('INSERT INTO pagecontent VALUES(?, ?, ?, ?, ?)',(rough, precise, main, alternate, translation,))
+        c.execute('INSERT INTO operonedict VALUES(?, ?, ?, ?, ?)',(rough, precise, main, alternate, translation,))
         #print(translation)
 
     return len(lis)
@@ -313,9 +313,9 @@ def main():
 
     # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% #
     # create db indices
-    conn.execute('CREATE INDEX roughindex ON pagecontent (roughword)')
+    conn.execute('CREATE INDEX roughindex ON operonedict (roughword)')
     print('[Created index for rough lookup]')
-    conn.execute('CREATE INDEX preciseindex ON pagecontent (preciseword)')
+    conn.execute('CREATE INDEX preciseindex ON operonedict (preciseword)')
     print('[Created index for precise lookup]')
     # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% #
     # sqlite cleanup

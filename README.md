@@ -19,25 +19,18 @@ A rough scheme of how this works:
 
 
 ## Data Model:
-Currently there are two tables in the database:
-pageindex and pagecontent
+Currently there is one table in the database:
+operonedict  
+There exist indices for the rough- and preciseword columns.
 
-#### Index
-| field | descrption |
-|-------|------------|
-| idx   | index of the page <br> (starting with 1 like the page urls) 
-| page  | The first entry on this page |
-| link  | The url of this page |
-
-#### Entries
-For now the data is stored very simply. In the future this will likely be extended.
+#### operonedict
 Every entry has the following fields:
 
 |    field       |   description                                      |
 |----------------|----------------------------------------------------|
 | roughword      | The greek word transformed with the rough-dictionary |
 | preciseword    | The greek word transformed with the precise dictionary |
-| word           | The primary lookup word.                           |
-| alternatewords | All alternate words joined by commas               |
+| greek          | The primary lookup word.                           |
+| alternategreek | All alternate words joined by commata              |
 | translation    | The translation. This is still entirely unformatted|
   

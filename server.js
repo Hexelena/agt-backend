@@ -22,7 +22,7 @@ app.get("/", function (req, res) {
 // DICTIONARY ROOT
 app.get("/dict", function (req, res) {
     console.log("GET /dict - dict main page");
-    db.get('SELECT COUNT(*) FROM pagecontent;', function(err, rows) {
+    db.get('SELECT COUNT(*) FROM operonedict;', function(err, rows) {
         res.json({
             'info': {
                 'description': 'root of the dict lookup.',
@@ -51,14 +51,14 @@ app.get("/dict/:mode/:query", function (req, res) {
     // then orders them by length (assuming that words that have a more similar length to the query are more relevant)
     // then limits them (for now)
     if (req.params.mode === "rough") {
-        db.all('SELECT greek, alternategreek, translation FROM pagecontent WHERE roughword LIKE ? ORDER BY LENGTH(greek) ASC LIMIT 10;',[req.params.query + '%'], function(err, rows) {
+        db.all('SELECT greek, alternategreek, translation FROM operonedict WHERE roughword LIKE ? ORDER BY LENGTH(greek) ASC LIMIT 10;',[req.params.query + '%'], function(err, rows) {
             if (err) {
                 console.log('error: ' + err);
             }
             res.json(rows)
         });
     } else if (req.params.mode === "precise") {
-        db.all('SELECT greek, alternategreek, translation FROM pagecontent WHERE preciseword LIKE ? ORDER BY LENGTH(greek) ASC LIMIT 10;',[req.params.query + '%'], function(err, rows) {
+        db.all('SELECT greek, alternategreek, translation FROM operonedict WHERE preciseword LIKE ? ORDER BY LENGTH(greek) ASC LIMIT 10;',[req.params.query + '%'], function(err, rows) {
             if (err) {
                 console.log('error: ' + err);
             }
