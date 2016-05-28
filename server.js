@@ -37,7 +37,7 @@ app.get("/dict", function (req, res) {
 // DICTIONARY QUERY
 app.get("/dict/:mode/:query", function (req, res) {
     // logging
-    console.log("incoming dict request for '" + req.params.query + "'. Processing as " + greek.normalizeGreek(req.params.query) + "'.");
+    console.log("GET /dict/"+ req.params.mode + "/" + req.params.query + " -> Processing as " + greek.normalizeGreek(req.params.query) + "'.");
 
     // parameter error handling
     // FIXME: somehow write that if expression better.
