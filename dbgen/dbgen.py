@@ -65,7 +65,7 @@ class App(tk.Tk):
         self.infoText = tk.Label(self, text="Huhu")
         self.infoText.grid(row=0, column=1, padx=5, pady=5)
 
-        self.startButton = tk.Button(self, text='Start Parsing', command=self.startParsing)
+        self.startButton = tk.Button(self, text='Start Parsing', command=self.parse)
         self.startButton.grid(row = 2, column = 1, padx=5, pady=5)
         self.quitButton = tk.Button(self, text='Close',fg='red', command=self.quit)
         self.quitButton.grid(row=3, column = 1, padx=5, pady=5)
@@ -104,19 +104,28 @@ class App(tk.Tk):
         sys.stdout = self.origstdout
         self.destroy()
 
-    def startParsing(self):
+    def parse(self):
+        """
+        Calls the methods to parse all entries and updates the progressbar widget to provide visual feedback.
+        First calls parseIndex to get all page links. Then calls the parsePage method on all the links.
+        Finally shows duration and parsed entry count when all pages are parsed.
+        """
+        # keep track of the time
         startTime = datetime.datetime.now()
         self.progress.set(0)
         pages = parseIndex(self.dbHandle)
         for idx, page in enumerate(pages):
+            # update the info text
             self.infoText.configure(text='Parsing page {}'.format(page))
+            # count the number of entries parsed
             self.entriesParsed += parsePage(self.dbHandle, page, idx)
+            # update the progressbar value and update the widget
             self.progress.set(self.progress.get() + 1.0)
             self.progressBar.update()
         endTime = datetime.datetime.now()
         timepassed = (endTime - startTime).total_seconds()
+        # display total time and parsed entry count
         self.infoText.configure(text='Finished Parsing: {} entries processed in {:.1f} seconds'.format(self.entriesParsed, timepassed))
-
 
 def getListLinks(soup):
     """
@@ -167,6 +176,7 @@ def createTables(connection):
 
 
 def parseExceptions(line):
+    # avoid weird errors with BeautifulSoup objects.
     if type(line) != str:
         raise TypeError('type str expected. found {}'.format(type(line)))
 
