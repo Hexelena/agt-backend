@@ -1,0 +1,15 @@
+[BASIC]
+
+# Include a hint for the correct naming format with invalid-name
+include-naming-hint=yes
+
+# not really helpful when using tkinter
+# i know i shouldn't but the line-too-long is annoying when using the sql commands
+disable=line-too-long
+
+[FORMAT]
+# List of optional constructs for which whitespace checking is disabled. `dict-
+# separator` is used to allow tabulation in dicts, etc.: {1  : 1,\n222: 2}.
+# `trailing-comma` allows a space between comma and closing bracket: (a, ).
+# `empty-line` allows space-only lines.
+no-space-check=empty-line
