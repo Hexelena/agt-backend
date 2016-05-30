@@ -1,9 +1,12 @@
 #! /usr/bin/env python3
+"""
+Module to transform greek and ascii strings between different representations.
+"""
 
 import logging
 
 
-GREEK_ALPHABET = "αβγδεζηϑικλμνξοπρστυφχψω";
+GREEK_ALPHABET = "αβγδεζηϑικλμνξοπρστυφχψω"
 
 
 GREEK_TO_ASCII_ROUGH = {
@@ -236,13 +239,13 @@ GREEK_SIMPL_DICT = {
     "ΰ": "υ",
     "ϋ": "υ",
 
-    "ώ" :"ω",
-    "ᾤ" :"ω",
-    "ᾠ" :"ω",
-    "ῲ" :"ω",
-    "ῴ" :"ω",
-    "ῳ" :"ω",
-    "ῷ" :"ω",
+    "ώ": "ω",
+    "ᾤ": "ω",
+    "ᾠ": "ω",
+    "ῲ": "ω",
+    "ῴ": "ω",
+    "ῳ": "ω",
+    "ῷ": "ω",
     "ῶ": "ω",
 
     # Capitals:
@@ -295,13 +298,18 @@ GREEK_SIMPL_DICT = {
     "ς": "σ",
     # unify Thetas
     "ϑ": "θ"
-};
+}
 
 
-def greek_simplify(input):
+def greek_simplify(greek_input):
+    """
+    Simplify greek letters in a string.
+    I.e. remove accents, use only one letter style for letters with multiple
+    styles and remove punctuation.
+    """
     simple_greek = ""
-    input = input.strip()
-    for letter in input:
+    greek_input = greek_input.strip()
+    for letter in greek_input:
         if letter in GREEK_SIMPL_DICT:
             simple_greek += GREEK_SIMPL_DICT[letter]
         else:
@@ -309,22 +317,28 @@ def greek_simplify(input):
 
     return simple_greek
 
-def greek_to_ascii(input, precise):
+def greek_to_ascii(greek_input, precise):
+    """
+    Transforms simplified greek into an ascii representation.
+    It has two modes:
+    Precise mode tries to make a difference between long and short and similar characters.
+    Rough mode tries to provide a simplify long and short letters and provide good search capabilities but might sometimes be not precise enough.
+    If it encounters letters it doesn't know, it throws an error.
+    """
     ascii_string = ""
-    for letter in input:
+    for letter in greek_input:
         if precise:
             if letter in GREEK_TO_ASCII_PRECISE:
                 ascii_string += GREEK_TO_ASCII_PRECISE[letter]
             else:
-                pass
-                logging.warning('unknown char: ' + letter + ' in input: <' + input + '>')
-                #raise ValueError('input string contains unknown character:"{}"'.format(letter))
+                logging.warning('unknown char: ' + letter + ' in input: <' + greek_input + '>')
+                raise ValueError('input string contains unknown character:"{}"'.format(letter))
         else:
             if letter in GREEK_TO_ASCII_ROUGH:
                 ascii_string += GREEK_TO_ASCII_ROUGH[letter]
             else:
-                logging.warning('unknown char: ' + letter + ' in input: <' + input + '>')
-                #raise ValueError('input string contains unknown character:"{}"'.format(letter))
+                logging.warning('unknown char: ' + letter + ' in input: <' + greek_input + '>')
+                raise ValueError('input string contains unknown character:"{}"'.format(letter))
 
     return ascii_string
 

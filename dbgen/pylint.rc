@@ -5,7 +5,7 @@ include-naming-hint=yes
 
 # not really helpful when using tkinter
 # i know i shouldn't but the line-too-long is annoying when using the sql commands
-disable=line-too-long
+disable=too-many-locals,line-too-long
 
 [FORMAT]
 # List of optional constructs for which whitespace checking is disabled. `dict-
