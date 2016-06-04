@@ -71,3 +71,4 @@ app.get("/dict/:mode/:query", function (req, res) {
 app.listen(PORT);
 
 console.log("agt-backend started on port " + PORT);
+
