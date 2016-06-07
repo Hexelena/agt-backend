@@ -189,7 +189,7 @@ def create_tables(connection):
     """
     
     # Create a table of the content of all pages.
-    connection.execute('CREATE TABLE IF NOT EXISTS operonedict(roughword TEXT, preciseword TEXT, greek TEXT, alternategreek TEXT, translation TEXT);')
+    connection.execute('CREATE TABLE IF NOT EXISTS operonedict(roughword TEXT, preciseword TEXT, greek TEXT, alternate TEXT, translation TEXT);')
     logging.info("[Created table 'operonedict']")
 
 
@@ -317,8 +317,8 @@ def parse_page(cursor, page):
         translation = str(sub_text.get_text()).strip()
 
         rough = greek_to_ascii(greek_simplify(greek), False)
-        precise = greek_to_ascii(greek_simplify(main), True)
-        cursor.execute('INSERT INTO operonedict VALUES(?, ?, ?, ?, ?)', (rough, precise, main, alternate, translation,))
+        precise = greek_to_ascii(greek_simplify(greek), True)
+        cursor.execute('INSERT INTO operonedict VALUES(?, ?, ?, ?, ?)', (rough, precise, greek, alternate, translation,))
         #print(translation)
 
     return len(lis)

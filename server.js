@@ -51,18 +51,22 @@ app.get("/dict/:mode/:query", function (req, res) {
     // then orders them by length (assuming that words that have a more similar length to the query are more relevant)
     // then limits them (for now)
     if (req.params.mode === "rough") {
-        db.all('SELECT greek, alternategreek, translation FROM operonedict WHERE roughword LIKE ? ORDER BY LENGTH(greek) ASC LIMIT 10;',[req.params.query + '%'], function(err, rows) {
+        db.all('SELECT greek, alternate, translation FROM operonedict WHERE roughword LIKE ? ORDER BY LENGTH(greek) ASC LIMIT 10;',[req.params.query + '%'], function(err, rows) {
             if (err) {
                 console.log('error: ' + err);
             }
-            res.json(rows)
+            res.json({
+                'rough': rows
+            });
         });
     } else if (req.params.mode === "precise") {
-        db.all('SELECT greek, alternategreek, translation FROM operonedict WHERE preciseword LIKE ? ORDER BY LENGTH(greek) ASC LIMIT 10;',[req.params.query + '%'], function(err, rows) {
+        db.all('SELECT greek, alternate, translation FROM operonedict WHERE preciseword LIKE ? ORDER BY LENGTH(greek) ASC LIMIT 10;',[req.params.query + '%'], function(err, rows) {
             if (err) {
                 console.log('error: ' + err);
             }
-            res.json(rows)
+            res.json({
+                'precise': rows
+            });
         });
     }
 });
