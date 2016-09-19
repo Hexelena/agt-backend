@@ -138,7 +138,7 @@ class App(tk.Tk):
             # update the info text
             self.info_text.configure(text='Parsing page {}'.format(page))
             # count the number of entries parsed
-            self.entries_parsed += parse_page(self.db_handle, page)
+            self.entries_parsed += parse_page(self.db_handle, page, self.entries_parsed)
             # update the progress_bar value and update the widget
             self.progress.set(self.progress.get() + 1.0)
             self.progress_bar.update()
@@ -189,7 +189,7 @@ def create_tables(connection):
     """
     
     # Create a table of the content of all pages.
-    connection.execute('CREATE TABLE IF NOT EXISTS operonedict(roughword TEXT, preciseword TEXT, greek TEXT, alternate TEXT, translation TEXT);')
+    connection.execute('CREATE TABLE IF NOT EXISTS operonedict(id INTEGER, roughword TEXT, preciseword TEXT, greek TEXT, alternate TEXT, translation TEXT);')
     logging.info("[Created table 'operonedict']")
 
 
@@ -258,7 +258,7 @@ def parse_index():
 
     return pages
 
-def parse_page(cursor, page):
+def parse_page(cursor, page, counter):
     """
     Parses a single page of the operone dictionary:
     Gets the page source:
@@ -318,7 +318,8 @@ def parse_page(cursor, page):
 
         rough = greek_to_ascii(greek_simplify(greek), False)
         precise = greek_to_ascii(greek_simplify(greek), True)
-        cursor.execute('INSERT INTO operonedict VALUES(?, ?, ?, ?, ?)', (rough, precise, greek, alternate, translation,))
+        cursor.execute('INSERT INTO operonedict VALUES(?, ?, ?, ?, ?, ?)', (counter, rough, precise, greek, alternate, translation,))
+        counter += 1
         #print(translation)
 
     return len(lis)
